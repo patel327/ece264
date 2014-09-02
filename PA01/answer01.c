@@ -53,7 +53,8 @@ int arrayIsIncreasing(int * array, int len)
                     small = array[ind];
                 }
             }
-        while(array[ind]>=small);    
+        while(array[ind]>=small); 
+        }
         if(test != len-1)
         {
             answer = 0;
