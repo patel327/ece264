@@ -60,16 +60,22 @@ int arrayIsIncreasing(int * array, int len)
 int arrayIndexRFind(int needle, const int * haystack, int len)
 {
     int ind;
-    int answer = 0;
+    int answer = -1;
     
     for (ind=0;ind<len;ind++)
     {
-        
+        if(haystack[ind]==needle)
+        {
+            answer = ind;
+        }
     }
-    return 0;
+    //return 0;
+    return answer;
 }
 
 int arrayFindSmallest(int * array, int len)
 {
+    int ind;
+    
     return 0;
 }
