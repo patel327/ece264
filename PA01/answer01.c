@@ -35,6 +35,7 @@ int arrayIsIncreasing(int * array, int len)
     int ind;
     int answer = 0;
     int test;
+    int small = array[0];
     
     if(len==0 || len==1)
     {
@@ -42,16 +43,17 @@ int arrayIsIncreasing(int * array, int len)
     }
     else
     {
-        for(ind=0;ind<len-1;ind++)
+        for(ind=0;ind<len;ind++)
         {
-            while(array[ind+1]>=array[ind])
+            if(array[ind]>=small)
             {
                 test = ind;
+                small = array[ind];
             }
         }
 
     }
-    if(test != len-2)
+    if(test != len-1)
     {
         answer = 0;
     }
