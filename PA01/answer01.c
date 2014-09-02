@@ -32,7 +32,7 @@ int arrayCountNegative(int * array, int len)
 
 int arrayIsIncreasing(int * array, int len)
 {    
-    int ind;
+    int ind = 0;
     int answer = 0;
     int test;
     int small = array[0];
