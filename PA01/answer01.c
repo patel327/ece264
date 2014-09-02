@@ -33,11 +33,34 @@ int arrayCountNegative(int * array, int len)
 int arrayIsIncreasing(int * array, int len)
 {    
     int ind;
-    return 0;
+    int test=0;
+    
+    if(len==0 || len==1)
+    {
+        test = 1;
+    }
+    else
+    {
+        for(ind=1;ind<=len;ind++)
+        {
+            if(array[ind]>=array[ind-1])
+            {
+                test=1;
+            }
+            else
+            {
+            test=0;
+            }
+        }
+    }
+    //return 0;
+    return test;
 }
 
 int arrayIndexRFind(int needle, const int * haystack, int len)
 {
+    int ind;
+    
     return 0;
 }
 
