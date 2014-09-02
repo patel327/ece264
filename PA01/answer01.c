@@ -51,16 +51,17 @@ int arrayIsIncreasing(int * array, int len)
                 small = array[ind];
             }
         }
+        if(test != len-1)
+        {
+            answer = 0;
+        }
+        else
+        {
+            answer = 1;
+        }
 
     }
-    if(test != len-1)
-    {
-        answer = 0;
-    }
-    else
-    {
-            answer = 1;
-    }
+
     //return 0;
     return answer;
 }
