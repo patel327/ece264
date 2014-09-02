@@ -50,6 +50,7 @@ int arrayIsIncreasing(int * array, int len)
                 {
                     test = ind;
                     small = array[ind];
+                    ind = ind + 1;
                 }
                 }while(array[ind]>=small && ind<len); 
         if(test != len-1)
