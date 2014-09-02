@@ -92,10 +92,10 @@ int arrayFindSmallest(int * array, int len)
     {
         for(ind= len - 1;ind>=0;ind--)
         {
-            if(array[ind]<small)
+            if(array[ind]<= small)
             {
-                small =array[ind];
-                answer=ind;
+                small = array[ind];
+                answer = ind;
             }
         }
     }
