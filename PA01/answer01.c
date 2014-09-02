@@ -49,7 +49,7 @@ int arrayIsIncreasing(int * array, int len)
                 test = ind;
             }
         }
-        if(test != len-1)
+        if(test != len-2)
         {
             answer = 0;
         }
