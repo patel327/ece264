@@ -49,14 +49,15 @@ int arrayIsIncreasing(int * array, int len)
                 test = ind;
             }
         }
-        if(test != len-2)
-        {
-            answer = 0;
-        }
-        else
-        {
+
+    }
+    if(test != len-2)
+    {
+        answer = 0;
+    }
+    else
+    {
             answer = 1;
-        }
     }
     //return 0;
     return answer;
