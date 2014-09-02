@@ -4,7 +4,7 @@
 int arraySum(int * array, int len)
 {
     int ind;
-    int sum=0;
+    int sum = 0;
     
     for(ind=0;ind<len;ind++)
         {
@@ -17,7 +17,7 @@ int arraySum(int * array, int len)
 int arrayCountNegative(int * array, int len)
 {
     int ind;
-    int count=0;
+    int count = 0;
     
     for(ind=0;ind<len;ind++)
         {
@@ -33,11 +33,11 @@ int arrayCountNegative(int * array, int len)
 int arrayIsIncreasing(int * array, int len)
 {    
     int ind;
-    int test=0;
+    int answer = 0;
     
     if(len==0 || len==1)
     {
-        test = 1;
+        answer = 1;
     }
     else
     {
@@ -45,22 +45,27 @@ int arrayIsIncreasing(int * array, int len)
         {
             if(array[ind]>=array[ind-1])
             {
-                test=1;
+                answer = 1;
             }
             else
             {
-            test=0;
+            answer = 0;
             }
         }
     }
     //return 0;
-    return test;
+    return answer;
 }
 
 int arrayIndexRFind(int needle, const int * haystack, int len)
 {
     int ind;
+    int answer = 0;
     
+    for (ind=0;ind<len;ind++)
+    {
+        
+    }
     return 0;
 }
 
