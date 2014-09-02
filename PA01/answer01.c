@@ -44,8 +44,6 @@ int arrayIsIncreasing(int * array, int len)
     else
     {
 
-            for(ind=0;ind<len;ind++)
-            {
                 do
                 {
                 if(array[ind]>=small)
@@ -53,8 +51,7 @@ int arrayIsIncreasing(int * array, int len)
                     test = ind;
                     small = array[ind];
                 }
-                }while(array[ind]>=small); 
-            }
+                }while(array[ind]>=small && ind<len); 
         if(test != len-1)
         {
             answer = 0;
