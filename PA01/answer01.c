@@ -10,7 +10,7 @@ int arraySum(int * array, int len)
         {
             sum += array[ind];
         }
-    return 0;
+    //return 0;
     return sum;
 }
 
