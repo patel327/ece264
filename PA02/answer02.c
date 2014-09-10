@@ -137,5 +137,7 @@ char * my_strcat(char * dest, const char * src)
     dest[counter+1+ind] = src[ind];
     ind++;
   }
-  dest[counter+1+ind] = '\0'
+  dest[counter+1+ind] = '\0';
+  
+  return &dest[0];
 }
