@@ -134,7 +134,7 @@ char * my_strcat(char * dest, const char * src)
   }
   while(src[ind] !='\0')
   {
-    dest[counter+1+ind] = src[ind];
+    dest[counter+2+ind] = src[ind];
     ind++;
   }
   dest[counter+1+ind] = '\0';
@@ -144,7 +144,7 @@ char * my_strcat(char * dest, const char * src)
 
 int my_isspace(int ch)
 {
-  if(ch != '\r' || ' ' || '\f' || '\n' || '\t' || '\v' || 0)
+  if(ch != ('\r') ||  (' ') || ('\f') || ('\n') || ('\t') || ('\v') || (0))
   {
     return 0;
   }
