@@ -59,7 +59,7 @@ char * my_strchr(const char * str, int ch)
   return NULL;
 }  
   
-char * my_strrchr(const char * str, int ch);
+char * my_strrchr(const char * str, int ch)
 {
   int len = 0;
   int counter = 0;
