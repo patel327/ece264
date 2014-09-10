@@ -108,3 +108,17 @@ char * my_strstr(const char * haystack, const char * needle)
   }
   return NULL;
 }  
+
+char * my_strcpy(char * dest, const char * src)
+{
+  int counter = 0;
+  
+  while(src[counter] != '\0')
+  {
+    dest[counter] = src[counter];
+    counter++;
+  }
+  dest[counter] = '\0';
+  
+  return dest[0];
+}
