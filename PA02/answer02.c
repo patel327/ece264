@@ -71,7 +71,7 @@ char * my_strrchr(const char * str, int ch)
     len = len + 1;
   }
   
-  for(counter = len+1; counter>0;counter--)
+  for(counter = len+1; counter>=0;counter--)
   {
     if(str[counter] == ch)
     {
@@ -144,11 +144,11 @@ char * my_strcat(char * dest, const char * src)
 
 int my_isspace(int ch)
 {
-  if(ch == '\r' || ' ' || '\f' || '\n' || '\t' || '\v' || 0)
+  if(ch != '\r' || ' ' || '\f' || '\n' || '\t' || '\v' || 0)
   {
-    return 1;
+    return 0;
   }
-  return 0;
+  return 1;
 }
 
 int my_atoi(const char * str)
