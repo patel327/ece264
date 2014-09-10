@@ -57,7 +57,7 @@ char * my_strchr(const char * str, int ch)
     counter++;
   }while(counter<len+1 || place != (counter+1));  
   
-  if place = -2
+  if(place = -2)
   {
     rtrn = (null)
   }
