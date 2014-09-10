@@ -120,5 +120,5 @@ char * my_strcpy(char * dest, const char * src)
   }
   dest[counter] = '\0';
   
-  return dest[0];
+  return &dest[0];
 }
