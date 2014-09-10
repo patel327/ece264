@@ -42,7 +42,8 @@ char * my_strchr(const char * str, int ch)
   int counter = 0;
   const char * newstr;
   int ind;
-  int rtrn;
+  const char * rtrn;
+  const char * null = [(null)];
   
   while(str[len] != '\0')
   {
@@ -59,7 +60,7 @@ char * my_strchr(const char * str, int ch)
   
   if(place = -2)
   {
-    rtrn = (null)
+    rtrn = null;
   }
   else
   {
