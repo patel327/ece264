@@ -94,6 +94,10 @@ char * my_strstr(const char * haystack, const char * needle)
     len = len + 1;
   }
   
+  if(haystack[counter] = '\0')
+  {
+    return &haystack[0];
+  }
   for(counter = 0; counter<len+1;counter++)
   {
     if(haystack[counter] == needle[0])
