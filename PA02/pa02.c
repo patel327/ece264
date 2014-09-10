@@ -70,8 +70,20 @@ int main(int argc, char * * argv)
     printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
 
     // -- my_isspace. You will have to do this for yourself.
+    my_isspace(' '); // 1
+    my_isspace('\f'); // 1
+    my_isspace('\n'); // 1
+    my_isspace('\r'); // 1
+    my_isspace('\t'); // 1
+    my_isspace('\v'); // 1	
 
     // -- my_atoi. You will have to do this for yourself.
+     my_atoi("0"); // 0
+     my_atoi("-12"); // -12
+     my_atoi("15th of March would be the ides."); // 15
+     my_atoi("4 months to Summer."); // 4
+     my_atoi("\n\f\t\v\r 6 white space characters handled correctly."); // 6
+     my_atoi("garbage, instead of a number like 73 for example, should yield a zero"); // 0
 
     return EXIT_SUCCESS;
 }
