@@ -71,7 +71,7 @@ char * my_strrchr(const char * str, int ch)
     len = len + 1;
   }
   
-  for(counter = len+1; counter>=0;counter--)
+  for(counter = len; counter>=0;counter--)
   {
     if(str[counter] == ch)
     {
@@ -134,10 +134,10 @@ char * my_strcat(char * dest, const char * src)
   }
   while(src[ind] !='\0')
   {
-    dest[counter+1+ind] = src[ind];
+    dest[counter+ind] = src[ind];
     ind++;
   }
-  dest[counter+1+ind] = '\0';
+  dest[counter+ind] = '\0';
   
   return &dest[0];
 }
