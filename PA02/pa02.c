@@ -70,17 +70,17 @@ int main(int argc, char * * argv)
     printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
 
     // -- my_isspace. You will have to do this for yourself.
-    my_isspace(' '); // 1
+
     printf("my_isspace(' ') = \"%d\n", my_isspace(' '));
-    my_isspace('\f'); // 1
+
     printf("my_isspace('\f') = \"%d\n", my_isspace('\f'));
-    my_isspace('\n'); // 1
+
     printf("my_isspace('\n') = \"%d\n", my_isspace('\n'));
-    my_isspace('\r'); // 1
+
     printf("my_isspace('\r') = \"%d\n", my_isspace('\r'));
-    my_isspace('\t'); // 1
+
     printf("my_isspace('\t') = \"%d\n", my_isspace('\t'));
-    my_isspace('\v'); // 1
+
     printf("my_isspace('\v') = \"%d\n", my_isspace('\v'));
 
     // -- my_atoi. You will have to do this for yourself.
