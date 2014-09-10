@@ -40,10 +40,10 @@ char * my_strchr(const char * str, int ch)
   int len = 0;
   int place = -2;
   int counter = 0;
-  char newstr[];
+  char newstr[10];
   int ind;
-  char rtrn[];
-  char null[] = [(null)];
+  char rtrn[10];
+  char null[7] = [(null)];
   
   while(str[len] != '\0')
   {
