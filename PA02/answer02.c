@@ -39,16 +39,22 @@ int my_countchar(const char * str, char ch)
 char * my_strchr(const char * str, int ch)
 {
   int len = 0;
+  int counter = 0;
   //char *none="null";
 
   
   while(str[len] != '\0')
   {
-    if(str[len] == ch)
+    len = len + 1;
+  }
+  
+  for(counter = 0; counter<len+1:counter++;)
+  {
+    if(str[counter] == ch)
     {
-      return &str[len];
+      return &str[counter];
     }
-    len++;
+    //len++;
   }
   return NULL;
 }  
