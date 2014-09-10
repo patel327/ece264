@@ -122,3 +122,20 @@ char * my_strcpy(char * dest, const char * src)
   
   return &dest[0];
 }
+
+char * my_strcat(char * dest, const char * src)
+{
+  int counter = 0;
+  int ind = 0;
+  
+  while(dest[counter] != '\0')
+  {
+    counter++;
+  }
+  while(src[ind] !='\0')
+  {
+    dest[counter+1+ind] = src[ind];
+    ind++;
+  }
+  dest[counter+1+ind] = '\0'
+}
