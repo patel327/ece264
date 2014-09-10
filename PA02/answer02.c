@@ -60,7 +60,7 @@ char * my_strchr(const char * str, int ch)
   
   if(place == -2)
   {
-  return char(none);
+  return none;
   }
   
   else
@@ -69,7 +69,7 @@ char * my_strchr(const char * str, int ch)
     {
       newstr[ind] = str[ind];
     }
-  return char(newstr);  
+  return newstr;  
   }
 }  
   
