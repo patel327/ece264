@@ -40,6 +40,9 @@ char * my_strchr(const char * str, int ch)
   int len = 0;
   int place = -2;
   int counter = 0;
+  int ind = 0;
+  char newstr[100];
+  char null[7]={(null)};
 
   
   while(str[len] != '\0')
@@ -55,6 +58,19 @@ char * my_strchr(const char * str, int ch)
     counter++;
   }while(counter<len+1 || place != (counter+1));  
   
+  if(place == -2)
+  {
+  return null;
+  }
+  
+  else
+  {
+    for(ind = place;ind<len+1;len++)
+    {
+      newstr[ind] = str[ind];
+    }
+  return newstr;  
+  }
 }  
   
 
