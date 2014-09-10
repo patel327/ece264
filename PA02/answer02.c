@@ -71,7 +71,7 @@ char * my_strrchr(const char * str, int ch)
     len = len + 1;
   }
   
-  for(counter = len+1; counter>len+1;counter--)
+  for(counter = len+1; counter>0;counter--)
   {
     if(str[counter] == ch)
     {
