@@ -146,7 +146,7 @@ int my_isspace(int ch)
 {
   int success = 1;
   
-  if((ch != 9) || (ch != 10) || (ch != 11) || (ch != 12) || (ch != 13) || (ch != 32))
+  if((ch != '\r') || (ch != '\t') || (ch != ' ') || (ch != '\n') || (ch != '\v') || (ch != '\f'))
   {
     success = 0;
   }
