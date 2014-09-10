@@ -39,41 +39,18 @@ int my_countchar(const char * str, char ch)
 char * my_strchr(const char * str, int ch)
 {
   int len = 0;
-  int place = -2;
-  int counter = 0;
-  int ind = 0;
-  char *newstr[10];
-  char *none="null";
+  //char *none="null";
 
   
   while(str[len] != '\0')
   {
-    len = len + 1;
-  }
-  do
-  {
-    if(str[counter] == ch)
+    if(str[len] == ch)
     {
-      place = counter;
+      return &str[len];
     }
-    counter++;
-  }while(counter<len+1 || place == (counter+1));  
-  
-  if(place == -2)
-  {
-  return (char *)none;
+    len++;
   }
-  
-  else
-  {
-    while(place<len+1)
-    {
-      newstr[ind] = str[place];
-      place++;
-      ind++;
-    }
-  return (char*)newstr;  
-  }
+  return NULL;
 }  
   
 
