@@ -81,3 +81,26 @@ char * my_strrchr(const char * str, int ch)
   }
   return NULL;
 }
+
+char * my_strstr(const char * haystack, const char * needle);
+{
+  int len = 0;
+  int counter = 0;
+  //char *none="null";
+
+  
+  while(haystack[len] != '\0')
+  {
+    len = len + 1;
+  }
+  
+  for(counter = 0; counter<len+1;counter++)
+  {
+    if(haystack[counter] == needle[0])
+    {
+      return &haystack[counter];
+    }
+    //len++;
+  }
+  return NULL;
+}  
