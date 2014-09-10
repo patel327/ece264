@@ -65,9 +65,9 @@ int main(int argc, char * * argv)
     my_strcat(buffer2, s1);
     printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s1, buffer2); //get doubles?
     my_strcat(buffer2, s2);
-    printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s2, buffer);
+    printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s2, buffer2);
     my_strcat(buffer2, s3);
-    printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s3, buffer);
+    printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s3, buffer2);
 
     // -- my_isspace. You will have to do this for yourself.
 
