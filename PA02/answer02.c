@@ -68,8 +68,9 @@ char * my_strchr(const char * str, int ch)
   {
     while(place<len+1)
     {
-      newstr[place] = str[place];
+      newstr[ind] = str[place];
       place++;
+      ind++;
     }
   return (char*)newstr;  
   }
