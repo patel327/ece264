@@ -43,7 +43,7 @@ char * my_strchr(const char * str, int ch)
   int counter = 0;
   int ind = 0;
   char newstr[10];
-  char none="null";
+  char none='null';
 
   
   while(str[len] != '\0')
