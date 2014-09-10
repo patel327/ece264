@@ -144,11 +144,17 @@ char * my_strcat(char * dest, const char * src)
 
 int my_isspace(int ch)
 {
+  int success;
+  
   if(ch != 9 || ch != 10 || ch != 11 || ch != 12 || ch != 13 || ch != 32)
   {
-    return 0;
+    success = 0;
   }
-  return 1;
+  else
+  {
+    success = 1;
+  }
+  return success;
 }
 
 int my_atoi(const char * str)
