@@ -141,3 +141,17 @@ char * my_strcat(char * dest, const char * src)
   
   return &dest[0];
 }
+
+int my_isspace(int ch)
+{
+  if(ch = '\r' || ' ' || '\f' || '\n' || '\t' || '\v' || 0)
+  {
+    return 1;
+  }
+  return 0;
+}
+
+int my_atoi(const char * str)
+{
+  return 0;
+}
