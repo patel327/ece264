@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "answer02.h"
 
-size_t my_strlen(const char * str);
+size_t my_strlen(const char * str)
 {
   int len=0;
   
@@ -12,7 +12,7 @@ size_t my_strlen(const char * str);
   return len;
 }
 
-int my_countchar(const char * str, char ch);
+int my_countchar(const char * str, char ch)
 {
   int len = 0;
   int counter = 0;
@@ -25,7 +25,7 @@ int my_countchar(const char * str, char ch);
   
   do
   {
-    if(str[counter] == 'ch')
+    if(str[counter] == ch)
     {
       occur = occur + 1;
     }
