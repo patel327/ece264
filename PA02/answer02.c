@@ -82,7 +82,7 @@ char * my_strrchr(const char * str, int ch)
   return NULL;
 }
 
-char * my_strstr(const char * haystack, const char * needle);
+char * my_strstr(const char * haystack, const char * needle)
 {
   int len = 0;
   int counter = 0;
