@@ -61,13 +61,13 @@ int main(int argc, char * * argv)
     // -- my_strcat. You will have to do this yourself... just
     // look at my_strcpy for an example, and go from there.
    
-    char buffer2[BUFFER_LEN];
-    my_strcat(buffer2, s1);
-    printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s1, buffer2); //get doubles?
-    my_strcat(buffer2, s2);
-    printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s2, buffer2);
-    my_strcat(buffer2, s3);
-    printf("my_strcat(buffer2, \"%s\"), buffer2 = \"%s\"\n", s3, buffer2);
+    //char buffer2[BUFFER_LEN];
+    my_strcat(buffer, s1);
+    printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s1, buffer); //get doubles?
+    my_strcat(buffer, s2);
+    printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s2, buffer);
+    my_strcat(buffer, s3);
+    printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
 
     // -- my_isspace. You will have to do this for yourself.
 
