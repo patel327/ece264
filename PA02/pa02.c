@@ -71,11 +71,17 @@ int main(int argc, char * * argv)
 
     // -- my_isspace. You will have to do this for yourself.
     my_isspace(' '); // 1
+    printf("my_isspace(' ') = \"%s\"\n", my_isspace(' '));
     my_isspace('\f'); // 1
+    printf("my_isspace('\f) = \"%s\"\n", my_isspace('\f'));
     my_isspace('\n'); // 1
+    printf("my_isspace('\n) = \"%s\"\n", my_isspace('\n'));
     my_isspace('\r'); // 1
+    printf("my_isspace('\r) = \"%s\"\n", my_isspace('\r'));
     my_isspace('\t'); // 1
-    my_isspace('\v'); // 1	
+    printf("my_isspace('\t) = \"%s\"\n", my_isspace('\t'));
+    my_isspace('\v'); // 1
+    printf("my_isspace('\v) = \"%s\"\n", my_isspace('\v'));
 
     // -- my_atoi. You will have to do this for yourself.
      my_atoi("0"); // 0
