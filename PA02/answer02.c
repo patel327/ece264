@@ -144,7 +144,7 @@ char * my_strcat(char * dest, const char * src)
 
 int my_isspace(int ch)
 {
-  if(ch != ('\r') ||  (' ') || ('\f') || ('\n') || ('\t') || ('\v') || (0))
+  if(ch != ('\r') ||  (' ') || ('\f') || ('\n') || ('\t') || ('\v'))
   {
     return 0;
   }
