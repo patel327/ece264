@@ -42,8 +42,8 @@ char * my_strchr(const char * str, int ch)
   int place = -2;
   int counter = 0;
   int ind = 0;
-  char *newstr[100];
-  char *none="null";
+  char newstr[100];
+  char none="null";
 
   
   while(str[len] != '\0')
