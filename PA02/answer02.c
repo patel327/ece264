@@ -35,7 +35,7 @@ int my_countchar(const char * str, char ch)
   return occur;
 }
 
-char * my_strchr(const char * str, int ch);
+char * my_strchr(const char * str, int ch)
 {
   int len = 0;
   int place = -2;
