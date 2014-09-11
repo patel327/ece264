@@ -87,7 +87,7 @@ int main(int argc, char * * argv)
      my_atoi("0"); // 0
      printf("my_atoi("0") = \"%d\n", my_atoi("0"));
      my_atoi("-12"); // -12
-     printf("my_atoi("-12"") = \"%d\n", my_atoi("-12"));
+     printf("my_atoi("-12") = \"%d\n", my_atoi("-12"));
      //my_atoi("15th of March would be the ides."); // 15
      //my_atoi("4 months to Summer."); // 4
      //my_atoi("\n\f\t\v\r 6 white space characters handled correctly."); // 6
