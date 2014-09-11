@@ -156,5 +156,28 @@ int my_isspace(int ch)
 
 int my_atoi(const char * str)
 {
-  return 0;
+  int ret = 0;
+  int ind = 0;
+  int minus = 0;
+  
+  
+  if(str[ind] = '-')
+  {
+  minus = 1;
+  }
+  
+  while(str[ind] != '\0')
+  {
+    if(str[ind] = '0' || '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9')
+    {
+      ret = 10*ret + (str[ind] - '0')
+    }
+    ind++;
+  }
+  
+  if(minus == 1)
+  {
+    return -ret;
+  }
+  return ret;
 }
