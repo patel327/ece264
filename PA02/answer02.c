@@ -161,16 +161,16 @@ int my_atoi(const char * str)
   int minus = 0;
   
   
-  if(str[ind] = '-')
+  if(str[ind] == '-')
   {
   minus = 1;
   }
   
   while(str[ind] != '\0')
   {
-    if(str[ind] = '0' || '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9')
+    if(str[ind] == '0' || '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9')
     {
-      ret = 10*ret + (str[ind] - '0')
+      ret = 10*ret + (str[ind] - '0');
     }
     ind++;
   }
