@@ -168,7 +168,7 @@ int my_atoi(const char * str)
   
   while(str[ind] != '\0')
   {
-    if(str[ind] == '0' || '1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9')
+    if(str[ind] == '0' || str[ind] == '1' || str[ind] == '2' || str[ind] == '3' || str[ind] == '4' || str[ind] == '5' || str[ind] == '6' || str[ind] == '7' || str[ind] == '8' || str[ind] == '9')
     {
       ret = 10*ret + (str[ind] - '0');
     }
