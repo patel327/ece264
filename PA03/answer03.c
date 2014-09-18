@@ -6,4 +6,21 @@
 char * strcat_ex(char * * dest, int * n, const char * src)
 {
   
+  
+  if( (*dest == NULL) || (strlen(src) + strlen(*dest) + 1 > *n) )
+  {
+    char * newdest;
+    *newdest = malloc(sizeof(char*)*(1 + 2 * (strlen(*dest) + strlen(src)));
+    *n = (1 + 2 * (strlen(*dest) + strlen(src));
+    
+    strcat(*newdest,*dest);
+    free(*dest);
+    *dest = &newdest;
+    strcat(*dest, src)
+    
+  }
+  else
+  {
+    strcat(*dest, src); //append with enough space
+  }
 }
