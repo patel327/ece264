@@ -7,7 +7,7 @@
 // Hint: look up swap(int *, int *) in the course notes
 void swapString(char * a, char * b)
 {
-    const char * tmp = *a;
+    char * tmp = *a;
     *a = *b;
     *b = tmp;
     printf("Calling swapString(...)\n");
