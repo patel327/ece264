@@ -16,11 +16,12 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     strcat(*newdest,*dest);
     free(*dest);
     *dest = &newdest;
-    strcat(*dest, src)
-    
+    strcat(*dest, src);
+    return (*dest);
   }
   else
   {
     strcat(*dest, src); //append with enough space
+    return(*dest);
   }
 }
