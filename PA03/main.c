@@ -5,7 +5,7 @@
 
 // This does not work... fix it.
 // Hint: look up swap(int *, int *) in the course notes
-void swapString(const char ** a, const char ** b)
+void swapString(char ** a, char ** b)
 {
     char tmp = **a;
     **a = **b;
@@ -34,8 +34,8 @@ int main(int argc, char * * argv)
 
     // Let's create our own array of strings
     printf("\nTesting swapString(...)\n");
-    const char * str1 = "one";
-    const char * str2 = "two";
+    char * str1 = "one";
+    char * str2 = "two";
     printf("Before swap, str1 == %p (i.e., '%s'), "
 	   "str2 == %p (i.e., '%s')\n", str1, str1, str2, str2);
     swapString(&str1, &str2);
