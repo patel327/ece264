@@ -12,11 +12,13 @@ int main(int argc, char * * argv)
 char* dest = NULL;
 char* src = "added";
 int n = 1;
-const char * str = "The\nTuring test";
-const char * delims = " \n";
+char * str = "The\nTuring test";
+char * delims = " \n";
+int arrLen = 20
 
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
+printf("answer2 = %s\n", implode(&str, &delims, &arrLen));
 
 return EXIT_SUCCESS;
 }
