@@ -50,15 +50,15 @@ char * implode(char * * strArr, int len, const char * glue)
 
 void sortStringArray(char * * arrString, int len)
 {
-  return 0;
+  
 }
 
 void sortStringCharacters(char * str)
 {
-  return 0;
+  
 }
 
 void destroyStringArray(char * * strArr, int len)
 {
-  return 0;
+  
 }
