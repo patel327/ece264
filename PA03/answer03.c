@@ -32,7 +32,7 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     dest = &newdest;
     strcat(*dest, src);
     free(newdest);
-    free(dest*);
+    free(*dest);
     return (*dest);
   }
   else
