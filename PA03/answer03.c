@@ -74,7 +74,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     free(arrstr[row]);
     if(arrstr[row] == NULL)
     {
-      arrstr[0] = '\0'
+      arrstr[0] = '\0';
     }
     memcpy(arrstr[row],str,(ind-begin));
     arrstr[row][ind-begin] = '\0';
