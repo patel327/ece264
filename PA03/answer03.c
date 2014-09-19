@@ -48,11 +48,11 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   int* numrow = 0;
   for(ind=0; ind<strlen(str);ind++)
   {
-    if(str[ind] == delims)
+    if(strchr(delims, str[ind]) != NULL)
     {
       (*numrow)++;
     }
-    if(str[strlen(str)-1] != delims)
+    if(strchr(delims, str[strlen(str)-1]) != NULL)
     {
       (*numrow)++;
     }
@@ -65,7 +65,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   {
     int numcol = 0;
     begin = ind;
-    while(str[ind] != delims)
+    while(strchr(delims, str[ind]) != NULL)
     {
       numcol++;
       ind++;
