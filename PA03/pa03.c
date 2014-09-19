@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "answer03.h"
 
 int main(int argc, char * * argv)
 {
@@ -9,7 +10,7 @@ int main(int argc, char * * argv)
 //char * s2 = "";
 //char * s3 = "foo";
 char* dest = NULL;
-char src = "added";
+char* src = "added";
 int n = 1;
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
