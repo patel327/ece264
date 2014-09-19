@@ -10,9 +10,8 @@ char * s2 = "";
 char * s3 = "foo";
 char* dest = NULL;
 char src = "added";
-n = 1
+int n = 1
 
-// -- my_strlen, should be: 12, 0, and 3
 printf("answer = %s\n", strcat_ex(char * * dest, int * n, char * src));
 
 return EXIT_SUCCESS;
