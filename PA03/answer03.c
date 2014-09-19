@@ -71,17 +71,13 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     }
     ind++;
     arrstr[row] = malloc(sizeof(char)*numcol);
-
-    if(arrstr[row] == NULL)
-    {
-      arrstr[0] = '\0';
-    }
+    arrstr[0] = '\0';
     memcpy(arrstr[row],str,(ind-begin));
     arrstr[row][ind-begin] = '\0';
 
   }
 
-  return (**arrstr);
+  return (arrstr);
 }
 
 char * implode(char * * strArr, int len, const char * glue)
