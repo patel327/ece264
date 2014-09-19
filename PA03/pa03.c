@@ -12,6 +12,9 @@ int main(int argc, char * * argv)
 char* dest = NULL;
 char* src = "added";
 int n = 1;
+const char * str = "The\nTuring test";
+const char * delims = " \n";
+
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
 
