@@ -15,7 +15,7 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     
     strcpy(newdest,*dest);
     free(*dest);
-    *dest = &newdest;
+    **dest = &newdest;
     strcat(*dest, src);
     return (*dest);
   }
@@ -27,7 +27,7 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     
     strcpy(newdest,*dest);
     free(*dest);
-    *dest = &newdest;
+    **dest = &newdest;
     strcat(*dest, src);
     return (*dest);
   }
