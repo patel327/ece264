@@ -18,7 +18,7 @@ int arrLen;
 
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
-printf("answer2 = %s\n", explode(str, delims, &arrLen));
+printf("answer2 = %s\n", explode(str, &delims, &arrLen));
 
 return EXIT_SUCCESS;
 }
