@@ -14,11 +14,10 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     *n = (1 + 2 * (strlen(src)));
     
     //strcpy(newdest,*dest);
-    free(*dest);
+    
     *dest = newdest;
+    *dest[0] = '\0';
     strcat(*dest, src);
-    free(newdest);
-    free(*dest);
     return (*dest);
   }
   else if((strlen(src) + strlen(*dest) + 1 > *n) )
@@ -26,13 +25,11 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     char * newdest;
     newdest = malloc(sizeof(char*)*(1 + 2 * (strlen(*dest) + strlen(src))));
     *n = (1 + 2 * (strlen(*dest) + strlen(src)));
-    
+    newdest[0] = '\0';
     strcpy(newdest,*dest);
     free(*dest);
     *dest = newdest;
     strcat(*dest, src);
-    free(newdest);
-    free(*dest);
     return (*dest);
   }
   else
