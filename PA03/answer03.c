@@ -77,7 +77,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     free(arrstr[row]);
   }
   free(*arrstr);
-  return (**arrstr);
+  return (*arrstr);
 }
 
 char * implode(char * * strArr, int len, const char * glue)
