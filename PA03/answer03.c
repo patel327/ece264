@@ -10,7 +10,7 @@ char * strcat_ex(char * * dest, int * n, const char * src)
   if( (*dest == NULL) || (strlen(src) + strlen(*dest) + 1 > *n) )
   {
     char * newdest;
-    *newdest = malloc(sizeof(char*)*(1 + 2 * (strlen(*dest) + strlen(src))));
+    newdest = malloc(sizeof(char*)*(1 + 2 * (strlen(*dest) + strlen(src))));
     *n = (1 + 2 * (strlen(*dest) + strlen(src)));
     
     strcpy(*newdest,*dest);
