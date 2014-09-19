@@ -42,9 +42,40 @@ char * strcat_ex(char * * dest, int * n, const char * src)
   }
 }
 
-char * * explode(const char * str, const char * delims, int * arrLen)
+char ** explode(const char * str, const char * delims, int * arrLen)
 {
-  return 0;
+  int ind;
+  int* numrow = 0;
+  for(ind=0; ind<strlen(str);ind++)
+  {
+    if(str[ind] == delims)
+    {
+      (*numrow)++;
+    }
+    if(str[strlen(str)-1] != delims)
+    {
+      (*numrow)++;
+    }
+  }
+  char**arrstr = malloc(sizeof(char*)*(*numrow));
+  int row;
+  ind=0;
+  int begin = 0;
+  for(row=0, row < (*numrow), row++)
+  {
+    int numcol = 0;
+    begin = ind;
+    while(str[ind] != delims)
+    {
+      numcol++;
+      ind++;
+    }
+    ind++;
+    arrstr[row] = malloc(sizeof(char)*numcol);
+    memcpy(arrstr[row],str,(ind-begin));
+    arrstr[row][ind-begin] = '\0'
+  }
+  return *arrstr;
 }
 
 char * implode(char * * strArr, int len, const char * glue)
