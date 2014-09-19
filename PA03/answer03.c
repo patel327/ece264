@@ -74,7 +74,9 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     arrstr[row] = malloc(sizeof(char)*numcol);
     memcpy(arrstr[row],str,(ind-begin));
     arrstr[row][ind-begin] = '\0';
+    free(arrstr[row]);
   }
+  free(**arrstr);
   return **arrstr;
 }
 
