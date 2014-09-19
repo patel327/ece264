@@ -5,12 +5,12 @@
 int main(int argc, char * * argv)
 {
 
-char * s1 = "Hello World!";
-char * s2 = "";
-char * s3 = "foo";
+//char * s1 = "Hello World!";
+//char * s2 = "";
+//char * s3 = "foo";
 char* dest = NULL;
 char src = "added";
-int n = 1;
+int* n = 1;
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
 
