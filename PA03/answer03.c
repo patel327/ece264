@@ -17,7 +17,7 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     free(*dest);
     dest = &newdest;
     strcat(*dest, src);
-    free(*newdest);
+    free(newdest);
     return (*dest);
   }
   else if((strlen(src) + strlen(*dest) + 1 > *n) )
@@ -30,7 +30,7 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     free(*dest);
     dest = &newdest;
     strcat(*dest, src);
-    free(*newdest);
+    free(newdest);
     return (*dest);
   }
   else
