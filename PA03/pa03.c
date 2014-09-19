@@ -14,11 +14,11 @@ char* src = "added";
 int n = 1;
 char * str = "The\nTuring test";
 char * delims = " \n";
-int arrLen = 20
+int arrLen;
 
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
-printf("answer2 = %s\n", implode(&str, &delims, &arrLen));
+printf("answer2 = %s\n", implode(str, delims, &arrLen));
 
 return EXIT_SUCCESS;
 }
