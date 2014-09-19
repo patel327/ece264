@@ -37,3 +37,28 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     return(*dest);
   }
 }
+
+char * * explode(const char * str, const char * delims, int * arrLen)
+{
+  return 0;
+}
+
+char * implode(char * * strArr, int len, const char * glue)
+{
+  return 0;
+}
+
+void sortStringArray(char * * arrString, int len)
+{
+  return 0;
+}
+
+void sortStringCharacters(char * str)
+{
+  return 0;
+}
+
+void destroyStringArray(char * * strArr, int len)
+{
+  return 0;
+}
