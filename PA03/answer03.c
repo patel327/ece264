@@ -49,10 +49,11 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     {
       (*numrow)++;
     }
-    if(strchr(delims, str[strlen(str)-1]) != NULL)
-    {
-      (*numrow)++;
-    }
+  }
+  
+  if(strchr(delims, str[strlen(str)-1]) != NULL)
+  {
+    (*numrow)++;
   }
   char**arrstr = malloc(sizeof(char*)*(*numrow));
  
