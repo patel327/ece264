@@ -55,7 +55,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     }
   }
   char**arrstr = malloc(sizeof(char*)*(*numrow));
-  free(*arrstr);  
+  free(**arrstr);  
   int row;
   ind=0;
   int begin = 0;
