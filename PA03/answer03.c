@@ -13,7 +13,7 @@ char * strcat_ex(char * * dest, int * n, const char * src)
     newdest = malloc(sizeof(char*)*(1 + 2 * (strlen(src))));
     *n = (1 + 2 * (strlen(src)));
     
-    //strcpy(newdest,*dest);
+    strcpy(newdest,*dest);
     free(*dest);
     *dest = newdest;
     strcat(*dest, src);
