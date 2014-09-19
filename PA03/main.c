@@ -5,7 +5,7 @@
 
 // This does not work... fix it.
 // Hint: look up swap(int *, int *) in the course notes
-void swapString(char ** a, char ** b)
+void swapString(const char ** a, const char ** b)
 {
     char tmp = *a;
     *a = *b;
