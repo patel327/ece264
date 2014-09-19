@@ -12,7 +12,7 @@ char* dest = NULL;
 char src = "added";
 int n = 1;
 
-printf("answer = %s\n", strcat_ex(char * * dest, int * n, char * src));
+printf("answer = %s\n", strcat_ex(&dest, &n, src));
 
 return EXIT_SUCCESS;
 }
