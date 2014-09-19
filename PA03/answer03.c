@@ -76,7 +76,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     arrstr[row][ind-begin] = '\0';
     free(arrstr[row]);
   }
-  free(**arrstr);
+  free(*arrstr);
   return **arrstr;
 }
 
