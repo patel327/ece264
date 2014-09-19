@@ -59,6 +59,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   int row;
   ind=0;
   int begin = 0;
+  
   for(row=0; row < (*numrow); row++)
   {
     int numcol = 0;
@@ -71,6 +72,10 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     ind++;
     arrstr[row] = malloc(sizeof(char)*numcol);
     free(arrstr[row]);
+    if(arrstr[row] == NULL)
+    {
+      arrstr[0] = '\0'
+    }
     memcpy(arrstr[row],str,(ind-begin));
     arrstr[row][ind-begin] = '\0';
 
