@@ -42,40 +42,30 @@ char * strcat_ex(char * * dest, int * n, const char * src)
 char ** explode(const char * str, const char * delims, int * arrLen)
 {
   int ind;
-  int* numrow = 0;
+  int N = 0;
   for(ind=0; ind<strlen(str);ind++)
   {
     if(strchr(delims, str[ind]) != NULL)
     {
-      (*numrow)++;
+      N++;
     }
   }
   
-  if(strchr(delims, str[strlen(str)-1]) != NULL)
-  {
-    (*numrow)++;
-  }
-  char**arrstr = malloc(sizeof(char*)*(*numrow));
+  char**arrstr = malloc(sizeof(char*)*(N+1));
  
   int row;
-  ind=0;
-  int begin = 0;
+  ind = 0;
+  int last = 0;
+  int arrInd = 0;
   
-  for(row=0; row < (*numrow); row++)
+  for(ind=0; ind < (N); ind++)
   {
-    int numcol = 0;
-    begin = ind;
-    while(strchr(delims, str[ind]) != NULL)
-    {
-      numcol++;
-      ind++;
-    }
-    ind++;
-    arrstr[row] = malloc(sizeof(char)*numcol);
-    arrstr[0] = '\0';
-    memcpy(arrstr[row],str,(ind-begin));
-    arrstr[row][ind-begin] = '\0';
-
+    if(strchr(delims, str[ind]) != NULL)
+    arrstr[arrInd] = malloc(sizeof(char)*(ind-last));
+    arrstr[arrInd] = '\0';
+    memcopy(arrstr[arrInd], &str[last],ind-last);
+    last = ind +1;
+    arrInd++;
   }
 
   return (arrstr);
