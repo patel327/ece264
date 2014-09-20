@@ -52,7 +52,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   }
   
   char**arrstr = malloc(sizeof(char*)*(N+1));
-  arrLen = strlen(arrstr)
+  arrLen = strlen(arrstr);
   int row;
   ind = 0;
   int last = 0;
@@ -70,7 +70,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
     }
   }
   arrstr[N] = malloc(sizeof(char)*(strlen(str)-last));
-  arrstr[N] = '\0'
+  arrstr[N] = '\0';
   memcpy(arrstr[N], &str[last],strlen(str)-last)
   return (arrstr);
 }
