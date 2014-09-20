@@ -77,7 +77,12 @@ char ** explode(const char * str, const char * delims, int * arrLen)
 
 char * implode(char * * strArr, int len, const char * glue)
 {
-  return 0;
+  int ind = 0;
+  
+  for(ind = 0; ind < len; ind++)
+  {
+    strcat_ex(strArr[ind],*len,glue);
+  }
 }
 
 void sortStringArray(char * * arrString, int len)
