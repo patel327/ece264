@@ -52,7 +52,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   }
   
   char**arrstr = malloc(sizeof(char*)*(N+1));
- 
+  arrLen = strlen(arrstr)
   int row;
   ind = 0;
   int last = 0;
@@ -61,13 +61,17 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   for(ind=0; ind < (N); ind++)
   {
     if(strchr(delims, str[ind]) != NULL)
+    {
     arrstr[arrInd] = malloc(sizeof(char)*(ind-last));
     arrstr[arrInd] = '\0';
     memcpy(arrstr[arrInd], &str[last],ind-last);
     last = ind +1;
     arrInd++;
+    }
   }
-
+  arrstr[N] = malloc(sizeof(char)*(strlen(str)-last));
+  arrstr[N] = '\0'
+  memcpy(arrstr[N], &str[last],strlen(str)-last)
   return (arrstr);
 }
 
