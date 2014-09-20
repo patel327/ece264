@@ -71,7 +71,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   }
   arrstr[N] = malloc(sizeof(char)*(strlen(str)-last));
   arrstr[N] = '\0';
-  memcpy(arrstr[N], &str[last],strlen(str)-last)
+  memcpy(arrstr[N], &str[last],strlen(str)-last);
   return (arrstr);
 }
 
