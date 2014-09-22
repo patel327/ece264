@@ -101,7 +101,7 @@ void sortStringArray(char * * arrString, int len)
 
 void sortStringCharacters(char * str)
 {
-  qsort(&arrString[0], len, sizeof(char),comparef )
+  qsort(&str[0], strlen(str), sizeof(char),comparef )
 }
 
 void destroyStringArray(char * * strArr, int len)
