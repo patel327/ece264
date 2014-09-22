@@ -62,16 +62,17 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   {
     if(strchr(delims, str[ind]) != NULL)
     {
-    arrstr[arrInd] = malloc(sizeof(char)*(ind-last));
-    arrstr[arrInd] = '\0';
+    arrstr[arrInd] = malloc(sizeof(char)*(ind-last + 1));
+    //arrstr[arrInd] = '\0';
     memcpy(arrstr[arrInd], &str[last],ind-last);
+    arrstr[arrInd][ind - last] = '\0';
     last = ind +1;
     arrInd++;
     }
   }
-  arrstr[N] = malloc(sizeof(char)*(strlen(str)-last));
-  arrstr[N] = '\0';
-  memcpy(arrstr[N], &str[last],strlen(str)-last);
+  arrstr[N] = malloc(sizeof(char)*(strlen(str)-last + 1));
+  //arrstr[N] = '\0';
+  memcpy(arrstr[N], &str[last],strlen(str)-last + 1);
   return (arrstr);
 }
 
@@ -92,15 +93,18 @@ char * implode(char * * strArr, int len, const char * glue)
 
 void sortStringArray(char * * arrString, int len)
 {
-  
+  //qsort(arrString*, len, sizeof(char*), )
 }
 
 void sortStringCharacters(char * str)
 {
-  
+  //qsort(arrString, len, sizeof(char), )
 }
 
 void destroyStringArray(char * * strArr, int len)
 {
   
 }
+
+//char* comparef()
+
