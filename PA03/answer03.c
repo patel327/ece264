@@ -4,6 +4,7 @@
 #include "answer03.h"
 
 int comparef(const void * arg1, const void * arg2);
+int comparefs(const void *arg1, const void *arg2);
 
 char * strcat_ex(char * * dest, int * n, const char * src)
 {
@@ -95,7 +96,7 @@ char * implode(char * * strArr, int len, const char * glue)
 
 void sortStringArray(char * * arrString, int len)
 {
-  qsort(&arrString[0], len, sizeof(char*),);
+  qsort(&arrString[0], len, sizeof(char*),comparefs);
 }
 
 void sortStringCharacters(char * str)
