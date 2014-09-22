@@ -17,7 +17,7 @@ char * delims = " \n";
 char * str1 = "The Turing test";
 char * delims1 = " ";
 int arrLen;
-int arrLen1
+int arrLen1;
 
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
