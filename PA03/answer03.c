@@ -93,7 +93,7 @@ char * implode(char * * strArr, int len, const char * glue)
 
 void sortStringArray(char * * arrString, int len)
 {
-  //qsort(arrString*, len, sizeof(char*), )
+  qsort(arrString*, len, sizeof(char*),comparef )
 }
 
 void sortStringCharacters(char * str)
@@ -106,5 +106,22 @@ void destroyStringArray(char * * strArr, int len)
   
 }
 
-//char* comparef()
+int comparef(const void * arg1, const void * arg2)
+{
+  const char * ptr1 = (const char *)arg1;
+  const char * ptr2 = (const char *)arg2;
+  
+  const char val1 = * ptr1;
+  const char val1 = * ptr1;
+  
+  if(val1 < val2)
+  {
+    return -1;
+  }
+  else if(val1 == val2)
+  {
+    return 0;
+  }
+  return 1;
+}
 
