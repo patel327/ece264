@@ -3,6 +3,8 @@
 #include <string.h>
 #include "answer03.h"
 
+int comparef(const void * arg1, const void * arg2);
+
 char * strcat_ex(char * * dest, int * n, const char * src)
 {
   
