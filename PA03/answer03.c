@@ -112,7 +112,7 @@ int comparef(const void * arg1, const void * arg2)
   const char * ptr2 = (const char *)arg2;
   
   const char val1 = * ptr1;
-  const char val1 = * ptr1;
+  const char val2 = * ptr2;
   
   if(val1 < val2)
   {
