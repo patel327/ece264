@@ -3,9 +3,19 @@
 #include <stdlib.h>
 #include "answer03.h"
 
+void test5()
+{
+  const char * str = "The\nTuring test";
+  const char * delims = " \n";
+  int n;
+  char * * strArr = explode(str, delims, &n);
+  printf("answer2 = %s\n", explode(str, delims, &n));
+}
+
 int main(int argc, char * * argv)
 {
-
+  test5();
+  return 0;
 //char * s1 = "Hello World!";
 //char * s2 = "";
 //char * s3 = "foo";
@@ -18,6 +28,8 @@ char * str1 = "The Turing test";
 char * delims1 = " ";
 int arrLen;
 int arrLen1;
+
+ int arr[] = {1 ,2, 3};
 
 
 printf("answer = %s\n", strcat_ex(&dest, &n, src));
