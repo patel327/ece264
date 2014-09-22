@@ -93,7 +93,7 @@ char * implode(char * * strArr, int len, const char * glue)
 
 void sortStringArray(char * * arrString, int len)
 {
-  qsort(arrString*, len, sizeof(char*),comparef);
+  //qsort(arrString*, len, sizeof(char*),comparef);
 }
 
 void sortStringCharacters(char * str)
