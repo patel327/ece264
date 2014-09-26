@@ -85,7 +85,7 @@ char * implode(char * * strArr, int len, const char * glue)
 {
   int ind = 0;
   //char* str;
-  str[0]='\0';
+  //str[0]='\0';
   for(ind = 0; ind < len; ind++)
   {
     strcat_ex(strArr,&len,glue);
