@@ -93,7 +93,7 @@ char * implode(char * * strArr, int len, const char * glue)
   }
 
   strcat_ex(str, &len, strArr[ind]);
-  return(&str[0]);
+  return(str[0]);
 }
 
 void sortStringArray(char * * arrString, int len)
