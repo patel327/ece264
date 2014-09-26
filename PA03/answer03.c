@@ -84,18 +84,15 @@ char ** explode(const char * str, const char * delims, int * arrLen)
 char * implode(char * * strArr, int len, const char * glue)
 {
   int ind = 0;
-  //char* str;
-  //str[0]='\0';
-  for(ind = 0; ind < len; ind++)
+  char** str = malloc(sizeof(char*)*strlen(strArr[0]));
+  str[0]='\0';
+  for(ind = 0; ind < len - 1; ind++)
   {
-    strcat_ex(strArr + ind,&len,glue);
+    strcat_ex(str, &len,strArr[ind]);
+    strcat_ex(str, &len, glue);
   }
-  for(ind = 0; ind < len-1; ind ++)
-  {
-    strcat_ex(strArr,&len,strArr[ind+1]);
-  }
-  char* str = malloc(sizeof(char)*strlen(strArr[0]));
-  strcpy(str,strArr[0]);
+
+  strcat_ex(str, &len, strArr[ind])
   return(&str[0]);
 }
 
