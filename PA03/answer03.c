@@ -107,7 +107,7 @@ void sortStringCharacters(char * str)
 
 void destroyStringArray(char * * strArr, int len)
 {
-  ind ind = 0;
+  int ind = 0;
   for(ind = 0; ind < len; ind++)
   {
     free(strArr[ind]);
