@@ -56,7 +56,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
   
   char**arrstr = malloc(sizeof(char*)*(N+1));
   *arrLen = N + 1;
-  int row;
+  //int row;
   ind = 0;
   int last = 0;
   int arrInd = 0;
