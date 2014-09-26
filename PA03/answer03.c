@@ -94,7 +94,8 @@ char * implode(char * * strArr, int len, const char * glue)
   {
     strcat_ex(strArr,&len,strArr[ind+1]);
   }
-  return(&strArr[0]);
+  strcpy(str,strArr[0])
+  return(&str[0]);
 }
 
 void sortStringArray(char * * arrString, int len)
