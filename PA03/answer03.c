@@ -111,6 +111,7 @@ void destroyStringArray(char * * strArr, int len)
   for(ind = 0; ind < len; ind++)
   {
     free(strArr[ind]);
+    free(strArr);
   }
 }
 
