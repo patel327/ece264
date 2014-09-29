@@ -88,11 +88,11 @@ char * implode(char * * strArr, int len, const char * glue)
   str[0]='\0';
   for(ind = 0; ind < len - 1; ind++)
   {
-    strcat_ex(str, &len,strArr[ind]);
-    strcat_ex(str, &len, glue);
+    strcat_ex(&str, &len,strArr[ind]);
+    strcat_ex(&str, &len, glue);
   }
 
-  strcat_ex(str, &len, strArr[ind]);
+  strcat_ex(&str, &len, strArr[ind]);
   return(str[0]);
 }
 
