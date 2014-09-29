@@ -85,16 +85,16 @@ char * implode(char * * strArr, int len, const char * glue)
 {
   int ind = 0;
   char* str = NULL;
-  int* n = 0;
+  int n = 0;
   printf("(not dumped)\n");
   for(ind = 0; ind < len - 2; ind++)
   {
-    strcat_ex(&str, n,strArr[ind]);
-    strcat_ex(&str, n, glue);
+    strcat_ex(&str, &n,strArr[ind]);
+    strcat_ex(&str, &n, glue);
     printf("(not dumped3)\n");
   }
 
-  strcat_ex(&str, n, strArr[ind]);
+  strcat_ex(&str, &n, strArr[ind]);
   printf("(not dumped2)\n");
   return(&str[0]);
 }
