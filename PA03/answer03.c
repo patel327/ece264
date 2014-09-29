@@ -84,7 +84,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
 char * implode(char * * strArr, int len, const char * glue)
 {
   int ind = 0;
-  char* str = malloc(sizeof(char)*strlen(strArr[0]));
+  char* str = malloc(sizeof(char)*10);
   str[0]='\0';
   printf("(not dumped)\n");
   for(ind = 0; ind < len; ind++)
