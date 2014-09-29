@@ -94,7 +94,7 @@ char * implode(char * * strArr, int len, const char * glue)
     printf("(not dumped3)\n");
   }
 
-  strcat_ex(&str, &n, strArr[ind + 1]);
+  strcat_ex(&str, &n, strArr[ind]);
   printf("(not dumped2)\n");
   return(&str[0]);
 }
