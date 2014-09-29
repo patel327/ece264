@@ -90,6 +90,7 @@ char * implode(char * * strArr, int len, const char * glue)
   for(ind = 0; ind <= len - 1; ind++)
   {
     strcat_ex(&str, &len,strArr[ind]);
+      printf("(not dumped3)\n");
     strcat_ex(&str, &len, glue);
   }
 
