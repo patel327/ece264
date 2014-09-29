@@ -86,6 +86,7 @@ char * implode(char * * strArr, int len, const char * glue)
   int ind = 0;
   char* str = malloc(sizeof(char)*strlen(strArr[0]));
   str[0]='\0';
+  printf("(not dumped)\n");
   for(ind = 0; ind <= len - 1; ind++)
   {
     strcat_ex(&str, &len,strArr[ind]);
@@ -93,6 +94,7 @@ char * implode(char * * strArr, int len, const char * glue)
   }
 
   strcat_ex(&str, &len, strArr[ind]);
+  printf("(not dumped2)\n");
   return(&str[0]);
 }
 
