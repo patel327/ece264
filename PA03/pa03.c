@@ -17,8 +17,8 @@ int main(int argc, char * * argv)
   test5();
   int len = 0;
   char * * strArr = explode("100 224 147 80", " ", &len);
-  //char * str = implode(strArr, len, ", ");
-  //printf("(%s)\n", str); // (100, 224, 147, 80)
+  char * str = implode(strArr, len, ", ");
+  printf("(%s)\n", str); // (100, 224, 147, 80)
   return 0;
 //char * s1 = "Hello World!";
 //char * s2 = "";
