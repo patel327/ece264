@@ -9,7 +9,7 @@ int main(int argc, char * * argv)
     //printf("Printing command-line arguments:\n");
     for(ind = 1; ind < argc; ind++) 
     {
-	  printf("%s ", ind, argv[ind]);
+	  printf("%s ", argv[ind]);
     }
     //printf("Done!\n");
 
