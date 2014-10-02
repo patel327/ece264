@@ -11,7 +11,7 @@ int main(int argc, char * * argv)
     {
 	  printf("%s ", argv[ind]);
     }
-    //printf("Done!\n");
+    printf("\n");
 
     return EXIT_SUCCESS;
 }
