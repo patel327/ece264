@@ -25,6 +25,8 @@ int main(int argc, char * * argv)
   
   for(ind = 1; ind < argc; ind++)
   {
+    int b; //counters
+    int c; //counters
     FILE* rfile = fopen(argv[ind],"r");
     if(rfile == NULL)
     {
@@ -34,14 +36,16 @@ int main(int argc, char * * argv)
     if(strcmp(argv[ind],"-") == 0)
     {
       do{
-      int b = fgetc(stdin);
+      b = fgetc(stdin);
       }while(b != EOF);
       fputc(b, stdout);
     }
     else
     {
-    int c = fgetc(rfile);
-    fputc(c ,stdout);
+      do{
+      c = fgetc(rfile);
+      }while(c != EOF);
+      fputc(c ,stdout);
     }
     fclose(rfile);
   }
