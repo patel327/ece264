@@ -33,7 +33,9 @@ int main(int argc, char * * argv)
     }
     if(strcmp(argv[ind],"-") == 0)
     {
+      do{
       int b = fgetc(stdin);
+      }while(b != EOF);
       fputc(b, stdout);
     }
     else
