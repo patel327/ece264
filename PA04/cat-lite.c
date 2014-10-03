@@ -25,8 +25,8 @@ int main(int argc, char * * argv)
   
   for(ind = 1; ind < argc; ind++)
   {
-    int b; //counters
-    int c; //counters
+    int b = 0; //counters
+    int c = 0; //counters
     //FILE* rfile = fopen(argv[ind],"r");
     //if(rfile == NULL)
     //{
