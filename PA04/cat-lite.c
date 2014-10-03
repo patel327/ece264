@@ -21,7 +21,11 @@ int main(int argc, char * * argv)
     return EXIT_SUCCESS;
   }
   }  
-  
+      if(argc == 1)
+    {
+      a = fgetc(stdin);
+      fputc(a, stdout);
+    }
   
   for(ind = 1; ind < argc; ind++)
   {
@@ -34,11 +38,7 @@ int main(int argc, char * * argv)
     //  fprintf(stderr, "cat cannot open %s\n", argv[ind]);
     //  return EXIT_FAILURE;
     //}
-    if(argc == 1)
-    {
-      a = fgetc(stdin);
-      fputc(a, stdout);
-    }
+
     if((strcmp(argv[ind],"-") == 0))
     {
       while(b!=EOF){
