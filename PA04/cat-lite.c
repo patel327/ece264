@@ -27,12 +27,12 @@ int main(int argc, char * * argv)
   {
     int b; //counters
     int c; //counters
-    FILE* rfile = fopen(argv[ind],"r");
-    if(rfile == NULL)
-    {
-      fprintf(stderr, "cat cannot open %s\n", argv[ind]);
-      return EXIT_FAILURE;
-    }
+    //FILE* rfile = fopen(argv[ind],"r");
+    //if(rfile == NULL)
+    //{
+    //  fprintf(stderr, "cat cannot open %s\n", argv[ind]);
+    //  return EXIT_FAILURE;
+    //}
     if(strcmp(argv[ind],"-") == 0)
     {
       do{
@@ -42,12 +42,19 @@ int main(int argc, char * * argv)
     }
     else
     {
+      FILE* rfile = fopen(argv[ind],"r");
+      if(rfile == NULL)
+      {
+      fprintf(stderr, "cat cannot open %s\n", argv[ind]);
+      return EXIT_FAILURE;
+      }
       do{
       c = fgetc(rfile);
       }while(c != EOF);
       fputc(c ,stdout);
+      fclose(rfile);
     }
-    fclose(rfile);
+    
   }
   return EXIT_SUCCESS;
 }  
