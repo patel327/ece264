@@ -33,7 +33,8 @@ int main(int argc, char * * argv)
     }
     if(argv[ind] == "-")
     {
-      fputc(stdin, stdout);
+      int b = fgetc(stdin);
+      fputc(b, stdout);
     }
     else
     {
