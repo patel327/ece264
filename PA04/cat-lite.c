@@ -25,6 +25,7 @@ int main(int argc, char * * argv)
   
   for(ind = 1; ind < argc; ind++)
   {
+    int a = 0;
     int b = 0; //counters
     int c = 0; //counters
     //FILE* rfile = fopen(argv[ind],"r");
@@ -33,6 +34,11 @@ int main(int argc, char * * argv)
     //  fprintf(stderr, "cat cannot open %s\n", argv[ind]);
     //  return EXIT_FAILURE;
     //}
+    if(argv[1] = "\0")
+    {
+      a = fgetc(stdin);
+      fputc(a, stdout);
+    }
     if((strcmp(argv[ind],"-") == 0))
     {
       while(b!=EOF){
