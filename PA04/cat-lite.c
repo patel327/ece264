@@ -33,7 +33,7 @@ int main(int argc, char * * argv)
     //  fprintf(stderr, "cat cannot open %s\n", argv[ind]);
     //  return EXIT_FAILURE;
     //}
-    if(strcmp(argv[ind],"-") == 0) ||(argv[ind] = '\0')
+    if((strcmp(argv[ind],"-") == 0) ||(argv[ind] = '\0'))
     {
       while(b!=EOF){
       b = fgetc(stdin);
