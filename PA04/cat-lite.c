@@ -28,7 +28,7 @@ int main(int argc, char * * argv)
     FILE* rfile = fopen(argv[ind],"r");
     if(rfile = NULL)
     {
-      fprintf(stderr, "cat cannot open %s\n", rfile);
+      fprintf(stderr, "cat cannot open %s\n", argv[ind]);
       return EXIT_FAILURE;
     }
     if(argv[ind] == "-")
