@@ -24,6 +24,23 @@ int main(int argc, char * * argv)
   return EXIT_SUCCESS;
   }
   }  
-
+  
+  for(ind = 1; ind < argc; ind++){
+  FILE* rfile = fopen(argv[ind],"r");
+  if(rfile == NULL)
+  {
+    fprintf(stderr, "grep cannot open %s\n", argv[ind]);
+    return 2;
+  }
+  fclose(rfile);  
+  }
+  for(ind = 1; ind < argc-1; ind++){
+  FILE* checkfile = fopen(argv[ind], "r")
+  if((strstr(checkfile, "-")) != NULL )
+  {
+    fprintf(stderr, "does not contain valid arguments");
+    return 2;
+  }
+  }
   return EXIT_SUCCESS;
 }
