@@ -37,7 +37,8 @@ int main(int argc, char * * argv)
     {
       while(b!=EOF){
       b = fgetc(stdin);
-      fputc(b, stdout);
+      if(b !=EOF){
+      fputc(b, stdout);}
       }
 
     }
@@ -52,8 +53,7 @@ int main(int argc, char * * argv)
       while(c!=EOF) {
       c = fgetc(rfile);
       if(c !=EOF){
-      fputc(c ,stdout);
-      }
+      fputc(c ,stdout);}
       }
 
       fclose(rfile);
