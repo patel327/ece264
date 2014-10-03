@@ -34,9 +34,9 @@ int main(int argc, char * * argv)
   }
   fclose(rfile);  
   }
-  for(ind = 1; ind < argc-1; ind++){
+  for(ind = 2; ind < argc-1; ind++){
   FILE* checkfile = fopen(argv[ind], "r");
-  if((strstr(checkfile, "-")) != NULL )
+  if((checkfile != "-v")||(checkfile != "-q")||(checkfile != "-n")||(checkfile != "--invert-match")||(checkfile != "--line-number")||(checkfile != "--quiet"))
   {
     fprintf(stderr, "does not contain valid arguments");
     return 2;
