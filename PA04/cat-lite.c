@@ -27,6 +27,7 @@ int main(int argc, char * * argv)
       while(a != EOF){
       a = fgetc(stdin);
       fputc(a, stdout);
+      return EXIT_SUCCESS;
     }
   
   for(ind = 1; ind < argc; ind++)
