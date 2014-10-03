@@ -38,7 +38,7 @@ int main(int argc, char * * argv)
     }
     else
     {
-    int c = fgetc(*argv[ind]);
+    int c = fgetc(*rfile);
     fputc(c ,stdout);
     }
     fclose(rfile);
