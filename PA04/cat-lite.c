@@ -52,7 +52,7 @@ int main(int argc, char * * argv)
       do{
       c = fgetc(rfile);
       fputc(c ,stdout);
-      }while(c != EOF);
+      }while((c = fgetc(rfile)) != EOF);
 
       fclose(rfile);
     }
