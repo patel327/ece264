@@ -23,13 +23,14 @@ int main(int argc, char * * argv)
   }  
       if(argc == 1)
     {
+          int a = 0;
       a = fgetc(stdin);
       fputc(a, stdout);
     }
   
   for(ind = 1; ind < argc; ind++)
   {
-    int a = 0;
+
     int b = 0; //counters
     int c = 0; //counters
     //FILE* rfile = fopen(argv[ind],"r");
