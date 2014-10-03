@@ -56,7 +56,8 @@ int main(int argc, char * * argv)
 
       fclose(rfile);
     }
-    printf("\n");
+    if((argc - ind) == 1)
+    {printf("\n");}
   }
   return EXIT_SUCCESS;
 }  
