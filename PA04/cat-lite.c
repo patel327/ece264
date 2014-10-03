@@ -41,7 +41,7 @@ int main(int argc, char * * argv)
     int c = fgetc(*argv[ind]);
     fputc(c ,stdout);
     }
-    fclose(argv[ind]);
+    fclose(rfile);
     return EXIT_SUCCESS;
   }
 }  
