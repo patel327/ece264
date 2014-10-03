@@ -20,7 +20,7 @@ int main(int argc, char * * argv)
   "  -q, --quiet            suppress all output\n"
   "\n"
   "Exit status is 0 if any line is selected, 1 otherwise;\n"
-  "if any error occurs, then the exit status is 2.);\n"
+  "if any error occurs, then the exit status is 2.\n");
   return EXIT_SUCCESS;
   }
   return 1;
