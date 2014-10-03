@@ -31,7 +31,7 @@ int main(int argc, char * * argv)
       fprintf(stderr, "cat cannot open %s\n", argv[ind]);
       return EXIT_FAILURE;
     }
-    if(argv[ind] == "-")
+    if(strcmp(argv[ind],"-") == 0)
     {
       int b = fgetc(stdin);
       fputc(b, stdout);
