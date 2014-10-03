@@ -53,7 +53,7 @@ int main(int argc, char * * argv)
       c = fgetc(rfile);
       fputc(c ,stdout);
       }while(c != EOF);
-
+      printf("\n");
       fclose(rfile);
     }
     
