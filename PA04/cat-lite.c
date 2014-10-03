@@ -51,7 +51,9 @@ int main(int argc, char * * argv)
       }
       while(c!=EOF) {
       c = fgetc(rfile);
+      if(c !=EOF){
       fputc(c ,stdout);
+      }
       }
 
       fclose(rfile);
