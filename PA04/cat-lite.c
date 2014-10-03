@@ -49,7 +49,7 @@ int main(int argc, char * * argv)
       fprintf(stderr, "cat cannot open %s\n", argv[ind]);
       return EXIT_FAILURE;
       }
-      do{
+      do {
       c = fgetc(rfile);
       fputc(c ,stdout);
       }while(c != EOF);
