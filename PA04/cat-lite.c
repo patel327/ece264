@@ -37,8 +37,9 @@ int main(int argc, char * * argv)
     {
       do{
       b = fgetc(stdin);
-      }while(b != EOF);
       fputc(b, stdout);
+      }while(b != EOF);
+
     }
     else
     {
@@ -50,8 +51,9 @@ int main(int argc, char * * argv)
       }
       do{
       c = fgetc(rfile);
-      }while(c != EOF);
       fputc(c ,stdout);
+      }while(c != EOF);
+
       fclose(rfile);
     }
     
