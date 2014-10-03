@@ -23,4 +23,4 @@ int main(int argc, char * * argv)
   "if any error occurs, then the exit status is 2.);\n"
   return EXIT_SUCCESS;
   }
-  }  
+}  
