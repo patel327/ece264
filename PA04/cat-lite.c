@@ -22,4 +22,23 @@ int main(int argc, char * * argv)
   }
   }  
   
+  
+  for(ind = 1; ind < argc; ind++)
+  {
+    FILE* rfile = fopen(argv[ind],"r");
+    if(rfile = NULL)
+    {
+      fprintf(stderr, "cat cannot open %s\n", rfile);
+      return EXIT_FAILURE;
+    }
+    if(argv[ind == "-"])
+    {
+      fputc(stdin, stdout);
+    }
+    else
+    {
+    int c = fgetc(*argv[ind]);
+    fputc(c ,stdout);
+    }
+  }
 }  
