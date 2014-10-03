@@ -26,7 +26,7 @@ int main(int argc, char * * argv)
   for(ind = 1; ind < argc; ind++)
   {
     FILE* rfile = fopen(argv[ind],"r");
-    if(rfile = NULL)
+    if(rfile == NULL)
     {
       fprintf(stderr, "cat cannot open %s\n", argv[ind]);
       return EXIT_FAILURE;
@@ -41,5 +41,7 @@ int main(int argc, char * * argv)
     int c = fgetc(*argv[ind]);
     fputc(c ,stdout);
     }
+    fclose(argv[ind]);
+    return EXIT_SUCCESS;
   }
 }  
