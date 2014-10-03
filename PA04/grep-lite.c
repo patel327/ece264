@@ -36,7 +36,7 @@ int main(int argc, char * * argv)
   }
   for(ind = 2; ind < argc-1; ind++){
   FILE* checkfile = fopen(argv[ind], "r");
-  if((strcmp(argv[ind],"-v") == 0)||(strcmp(argv[ind],"-q") == 0)||(strcmp(argv[ind],"-n") == 0)||(strcmp(argv[ind],"--invert-match") == 0)||(strcmp(argv[ind],"--line-number") == 0)||(strcmp(argv[ind],"--quiet") == 0))
+  if((strcmp(checkfile,"-v") == 0)||(strcmp(argv[ind],"-q") == 0)||(strcmp(argv[ind],"-n") == 0)||(strcmp(argv[ind],"--invert-match") == 0)||(strcmp(argv[ind],"--line-number") == 0)||(strcmp(argv[ind],"--quiet") == 0))
   {
     fprintf(stderr, "does not contain valid arguments");
     return 2;
