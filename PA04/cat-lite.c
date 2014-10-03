@@ -42,6 +42,6 @@ int main(int argc, char * * argv)
     fputc(c ,stdout);
     }
     fclose(rfile);
-    return EXIT_SUCCESS;
   }
+  return EXIT_SUCCESS;
 }  
