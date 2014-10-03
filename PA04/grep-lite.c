@@ -35,7 +35,7 @@ int main(int argc, char * * argv)
   fclose(rfile);  
   }
   for(ind = 1; ind < argc-1; ind++){
-  FILE* checkfile = fopen(argv[ind], "r")
+  FILE* checkfile = fopen(argv[ind], "r");
   if((strstr(checkfile, "-")) != NULL )
   {
     fprintf(stderr, "does not contain valid arguments");
