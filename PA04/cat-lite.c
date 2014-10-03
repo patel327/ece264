@@ -35,10 +35,10 @@ int main(int argc, char * * argv)
     //}
     if(strcmp(argv[ind],"-") == 0)
     {
-      do{
+      while(b!=EOF){
       b = fgetc(stdin);
       fputc(b, stdout);
-      }while(b!=EOF);
+      }
 
     }
     else
@@ -49,10 +49,10 @@ int main(int argc, char * * argv)
       fprintf(stderr, "cat cannot open %s\n", argv[ind]);
       return EXIT_FAILURE;
       }
-      do {
+      while(c!=EOF) {
       c = fgetc(rfile);
       fputc(c ,stdout);
-      }while(c!=EOF);
+      }
 
       fclose(rfile);
     }
