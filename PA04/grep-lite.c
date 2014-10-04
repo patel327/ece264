@@ -39,7 +39,7 @@ int main(int argc, char * * argv)
   {
     lineNo++;
     if((strstr(mystring, "-q") != NULL)||(strstr(mystring, "--quiet") != NULL)){
-    return 1;
+    return 1;}
     if((strstr(mystring, "-n") != NULL)||(strstr(mystring, "--line-number") != NULL)){
     printf("%d:",lineNo);
     counter++;}    
@@ -54,6 +54,4 @@ int main(int argc, char * * argv)
 
     }
   }
-  
-  return 1;
-}
+
