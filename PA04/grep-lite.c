@@ -33,10 +33,27 @@ int main(int argc, char * * argv)
   if(((strstr(mystring,"-q")) != NULL)||((strstr(mystring,"-n")) != NULL)||((strstr(mystring,"-v")) != NULL)||((strstr(mystring,"--invert-match")) != NULL)||((strstr(mystring,"--quiet")) != NULL)||((strstr(mystring,"--line-number")) != NULL))
   return 2;
   }
-  //while(fgets(mysting,2001,stdin) != NULL)
-  //{
+  int lineNo = 1;
+  int counter = 0;
+  while(fgets(mystring,2001,stdin) != NULL)
+  {
+    lineNo++;
+    if((strstr(mystring, "-q") != NULL)||(strstr(mystring, "--quiet") != NULL)){
+    return 1;
+    if((strstr(mystring, "-n") != NULL)||(strstr(mystring, "--line-number") != NULL)){
+    printf("%d:",lineNo);
+    counter++;}    
+    if((strstr(mystring, "-v") != NULL)||(strstr(mystring, "--invert-match") != NULL)){
+      if(strstr(mystring ,(argv[argc])) = NULL){ //pattern found
+        fputs(mystring, stdout);
+        counter++;
+      }
+    }
+
+    return 0;
+
+    }
+  }
   
-  //}
-  
-  return EXIT_SUCCESS;
+  return 1;
 }
