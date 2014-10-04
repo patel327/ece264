@@ -44,7 +44,7 @@ int main(int argc, char * * argv)
     printf("%d:",lineNo);
     counter++;}    
     if((strstr(mystring, "-v") != NULL)||(strstr(mystring, "--invert-match") != NULL)){
-      if(strstr(mystring ,(argv[argc])) = NULL){ //pattern found
+      if(strstr(mystring ,(argv[argc])) == NULL){ //pattern found
         fputs(mystring, stdout);
         counter++;
       }
