@@ -25,22 +25,18 @@ int main(int argc, char * * argv)
   }
   }  
   
-  for(ind = 1; ind < argc; ind++){
-  FILE* rfile = fopen(argv[ind],"r");
-  if(rfile == NULL)
+  char mystring[2001];
+  //fgets(mystring,2001,stdin);
+  
+  while(fgets(mystring,2001,stdin) != NULL)
   {
-    fprintf(stderr, "grep cannot open %s\n", argv[ind]);
-    return 2;
+  if(((strstr(mystring,"-q")) != NULL)||((strstr(mystring,"-n")) != NULL)||((strstr(mystring,"-v")) != NULL)||((strstr(mystring,"--invert-match")) != NULL)||((strstr(mystring,"--quiet")) != NULL)||((strstr(mystring,"--line-number")) != NULL))
+  return 2;
   }
-  fclose(rfile);  
-  }
-  for(ind = 2; ind < argc-1; ind++){
-  FILE* checkfile = fopen(argv[ind], "r");
-  if((strcmp(checkfile,"-v") == 0)||(strcmp(argv[ind],"-q") == 0)||(strcmp(argv[ind],"-n") == 0)||(strcmp(argv[ind],"--invert-match") == 0)||(strcmp(argv[ind],"--line-number") == 0)||(strcmp(argv[ind],"--quiet") == 0))
-  {
-    fprintf(stderr, "does not contain valid arguments");
-    return 2;
-  }
-  }
+  //while(fgets(mysting,2001,stdin) != NULL)
+  //{
+  
+  //}
+  
   return EXIT_SUCCESS;
 }
