@@ -84,6 +84,47 @@ void oddpartition(int *arr, int ind, int left)
   }
 }
 
+void oddevenpartition(int *arr, int ind, int left)
+{
+  int val;
+  if(left == 0)
+  {
+    printPart(arr, ind);
+    return;
+  }
+  for (val = 1; val <= left; val++)
+  {
+    int valid = 0;
+    if(ind == 0)
+    {
+      valid = 1;
+    }
+    else
+    {
+      valid = ((arr[ind-1] % 2) != (val % 2));
+    }
+    if(valid == 1)
+    {
+      arr[ind] = val;
+      partition(arr, ind + 1, left - val);
+    }
+  }
+}
+
+void oddevenpartition(int *arr, int ind, int left)
+{
+  int val;
+  if(left == 0)
+  {
+    printPart(arr, ind);
+    return;
+  }
+  for(val = 1; val <=left; val++)
+  {
+    
+  }
+}
+
 void partition(int *arr, int ind, int left)
 {
   int val;
@@ -145,10 +186,16 @@ void partitionEven(int value)
 
 void partitionOddAndEven(int value)
 {
-  //return;
+  int * arr;
+  arr = malloc(sizeof(int)*value);
+  oddevenpartition(arr,0,value);
+  free(arr);
 }
 
 void partitionPrime(int value)
 {
-  //return;
+  int * arr;
+  arr = malloc(sizeof(int)*value);
+  primepartition(arr,0,value);
+  free(arr);
 }
