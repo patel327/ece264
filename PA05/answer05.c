@@ -9,7 +9,7 @@ void printPart(int *arr, int len)
   printf("=");
   for(ind=0; ind<len-1; ind++);
   {
-    printf("%d +",arr[ind]);
+    printf("%d + ",arr[ind]);
   }
   printf("%d\n", arr[len-1]);
 }
