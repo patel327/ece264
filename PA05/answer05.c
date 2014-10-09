@@ -14,6 +14,21 @@ void printPart(int *arr, int len)
   printf("%d\n", arr[len-1]);
 }
 
+void oddpartition(int *arr, int ind, int left)
+{
+  int val;
+  if(left == 0)
+  {
+    printPart(arr, ind);
+    return;
+  }
+  for(val = 1; val<= left; val+=2)
+  {
+    arr[ind] = val;
+    partition(arr, ind+1, left-val);
+  }
+}
+
 void partition(int *arr, int ind, int left)
 {
   int val;
@@ -51,7 +66,11 @@ void partitionDecreasing(int value)
 
 void partitionOdd(int value)
 {
-  //return;
+  int * arr;
+  arr = malloc(sizeof(int)*value);
+  oddpartition(arr,0,value);
+  free(arr);
+  return EXIT_SUCCESS;
 }
 
 void partitionEven(int value)
