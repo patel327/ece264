@@ -29,6 +29,26 @@ void evenpartition(int *arr, int ind, int left)
   }
 }
 
+void decpartition(int * arr, int ind, int left)
+{
+  int val;
+  if (left == 0)
+  {
+    printPart(arr, ind);
+    return;
+  }
+  int max = left;
+  if(ind != left)
+  {
+    max = arr[ind + 1] - 1;
+  }
+  for (val = max; val >= left; val--)
+  {
+    arr[ind] = val;
+    incpartition(arr, ind - 1, left + val);
+  }
+}
+
 void incpartition(int * arr, int ind, int left)
 {
   int val;
@@ -91,12 +111,18 @@ void partitionAll(int value)
 
 void partitionIncreasing(int value)
 {
-  //return;
+  int * arr;
+  arr = malloc(sizeof(int)*value);
+  incpartition(arr,0,value);
+  free(arr);
 }
 
 void partitionDecreasing(int value)
 {
-  //return;
+  int * arr;
+  arr = malloc(sizeof(int)*value);
+  decpartition(arr,value,value);
+  free(arr);
 }
 
 void partitionOdd(int value)
