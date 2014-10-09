@@ -31,21 +31,21 @@ void evenpartition(int *arr, int ind, int left)
 
 void decpartition(int * arr, int ind, int left)
 {
-  int val = ind;
-  if (left == val)
+  int val;
+  if (left == 0)
   {
     printPart(arr, ind);
     return;
   }
   int max = left;
-  if(ind != left)
+  if(ind != 0)
   {
-    max = arr[ind + 1] - 1;
+    max = arr[ind - 1] - 1;
   }
   for (val = max; val >= left; val--)
   {
     arr[ind] = val;
-    decpartition(arr, ind - 1, left + val);
+    decpartition(arr, ind + 1, left - val);
   }
 }
 
