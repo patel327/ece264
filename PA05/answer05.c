@@ -32,7 +32,7 @@ void evenpartition(int *arr, int ind, int left)
 void decpartition(int * arr, int ind, int left)
 {
   int val;
-  if (left == 0)
+  if (left == val)
   {
     printPart(arr, ind);
     return;
@@ -121,7 +121,7 @@ void partitionDecreasing(int value)
 {
   int * arr;
   arr = malloc(sizeof(int)*value);
-  decpartition(arr,value,value);
+  decpartition(arr,value,0);
   free(arr);
 }
 
