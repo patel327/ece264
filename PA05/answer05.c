@@ -121,7 +121,7 @@ void partitionDecreasing(int value)
 {
   int * arr;
   arr = malloc(sizeof(int)*value);
-  decpartition(arr,value,0);
+  decpartition(arr,0,value);
   free(arr);
 }
 
