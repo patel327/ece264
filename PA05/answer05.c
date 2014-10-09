@@ -13,7 +13,7 @@ void printPart(int *arr, int len)
   }
   printf("%d\n", arr[len-1]);
 }
-
+/*
 void evenpartition(int *arr, int ind, int left)
 {
   int val;
@@ -28,7 +28,7 @@ void evenpartition(int *arr, int ind, int left)
     partition(arr, ind+1, left-val);
   }
 }
-
+*/
 void oddpartition(int *arr, int ind, int left)
 {
   int val;
