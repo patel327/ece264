@@ -31,7 +31,7 @@ void evenpartition(int *arr, int ind, int left)
 
 void decpartition(int * arr, int ind, int left)
 {
-  int val;
+  int val = ind;
   if (left == val)
   {
     printPart(arr, ind);
