@@ -122,9 +122,8 @@ void primepartition(int *arr, int ind, int left)
   }
   for(val = 1; val <=left; val++)
   {
-    int index;
-    int valid = 0;
-    for(index = 1; index <= val; index++)
+    int ind2;
+    for(ind2 = 1; index <= val; ind2++)
     {
       if(val % index == 0)
       {
