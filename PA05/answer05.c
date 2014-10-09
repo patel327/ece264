@@ -42,7 +42,7 @@ void decpartition(int * arr, int ind, int left)
   {
     max = arr[ind - 1] - 1;
   }
-  for (val = max; val >= left; val--)
+  for (val = max; val >= 1; val--)
   {
     arr[ind] = val;
     decpartition(arr, ind + 1, left - val);
