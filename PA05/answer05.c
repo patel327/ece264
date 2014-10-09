@@ -6,11 +6,11 @@
 void printPart(int *arr, int len)
 {
   int ind;
-  for(ind=0; ind<length-1; ind++);
+  for(ind=0; ind<len-1; ind++);
   {
     printf("%d +",arr[ind]);
   }
-  printf("%d\n", arr[length-1]);
+  printf("%d\n", arr[len-1]);
 }
 
 void partition(int *arr, int ind, int left)
@@ -40,30 +40,30 @@ void partitionAll(int value)
 
 void partitionIncreasing(int value)
 {
-  return;
+  //return;
 }
 
 void partitionDecreasing(int value)
 {
-  return;
+  //return;
 }
 
 void partitionOdd(int value)
 {
-  return;
+  //return;
 }
 
 void partitionEven(int value)
 {
-  return;
+  //return;
 }
 
 void partitionOddAndEven(int value)
 {
-  return;
+  //return;
 }
 
 void partitionPrime(int value)
 {
-  return;
+  //return;
 }
