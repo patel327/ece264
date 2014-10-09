@@ -114,7 +114,7 @@ void oddevenpartition(int *arr, int ind, int left)
 void primepartition(int *arr, int ind, int left)
 {
   int val;
-  int counter = 0;
+  
   if(left == 0)
   {
     printPart(arr, ind);
@@ -122,15 +122,16 @@ void primepartition(int *arr, int ind, int left)
   }
   for(val = 1; val <=left; val++)
   {
+    int counter = 0;
     int ind2;
-    for(ind2 = 1; ind2 <= val; ind2++)
+    for(ind2 = 2; ind2 < val; ind2++)
     {
       if(val % ind2 == 0)
       {
         counter++;
       }
     }
-    if(counter == 2)
+    if(counter == 0)
     {
       arr[ind] = val;
       primepartition(arr, ind + 1, left - val);
