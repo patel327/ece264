@@ -101,17 +101,17 @@ void oddevenpartition(int *arr, int ind, int left)
     }
     else
     {
-      valid = ((arr[ind-1] % 2) != (val % 2));
+      valid = (arr[ind-1] % 2) != (val % 2);
     }
     if(valid == 1)
     {
       arr[ind] = val;
-      partition(arr, ind + 1, left - val);
+      oddevenpartition(arr, ind + 1, left - val);
     }
   }
 }
 
-void oddevenpartition(int *arr, int ind, int left)
+void primepartition(int *arr, int ind, int left)
 {
   int val;
   if(left == 0)
