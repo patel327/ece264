@@ -7,7 +7,7 @@ void printPart(int *arr, int len)
 {
   int ind;
   printf("=");
-  for(ind=0; ind<len-1; ind++);
+  for(ind=0; ind<len-1; ind++)
   {
     printf("%d + ",arr[ind]);
   }
