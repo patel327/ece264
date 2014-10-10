@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "answer05.h"
+// This code is adapted from chapter 14(integer partition) in Professor Lu's textbook.
 
 void printPart(int *arr, int len)
 {
