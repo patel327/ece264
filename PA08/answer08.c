@@ -42,22 +42,22 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
   while(lhs != NULL && rhs != NULL){
     int determine = (*compar)(lhs -> str, rhs -> str);
     if(determine >= 0){
-      newlist -> next= lhs;
+      newlist -> next = lhs -> str;
       lhs = lhs->next;
     }
     else{
-      newlist -> str = rhs -> str;
+      newlist -> next = rhs -> str;
       rhs = rhs -> next;
     }
     //newlist -> next = NULL;
   }
   while(lhs != NULL){
-    newlist -> next = lhs;
+    newlist -> next = lhs -> str;
     lhs = lhs -> next;
     //newlist -> next = NULL;
   }
   while(rhs != NULL){
-    newlist -> next = rhs;
+    newlist -> next = rhs -> str ;
     rhs = rhs -> next;
     //newlist -> next = NULL;
   }
