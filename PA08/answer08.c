@@ -32,7 +32,7 @@ int List_length(List * list){
   int counter = 1;
   while(list -> next != NULL){
     counter++;
-    list = list.next;
+    list = list->next;
   }
   return counter;
 }
