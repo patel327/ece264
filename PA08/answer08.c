@@ -5,7 +5,7 @@
 #include "answer08.h"
 
 int (*compar)(const char *arg1, const char *arg2);
-List * List_merge(List * lhs, List * rhs, int (*compar)(const char *, const char *));
+List * List_merge(List * lhs, List * rhs, (*compar);
 int List_length(List * list);
 
 List * List_createNode(const char * str){
