@@ -5,6 +5,8 @@
 #include "answer08.h"
 
 int comparefs(const void *arg1, const void *arg2);
+List * List_merge(List * lhs, List * rhs, comparefs);
+int List_length(List * list);
 
 List * List_createNode(const char * str){
   List * head = malloc(sizeof(List));
@@ -62,6 +64,12 @@ List * List_merge(List * lhs, List * rhs, comparefs){
   return newlist;
 }
 
+List * List_sort(List * list, comparefs){
+  if(List_length(list) <= 1){
+    return list;
+  }
+  
+}
 
 int comparefs(const void *arg1, const void *arg2)
 {
