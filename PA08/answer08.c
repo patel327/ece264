@@ -56,13 +56,15 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
     //newlist -> next = NULL;
   }
   while(lhs != NULL){
-    newlist -> next = lhs -> str;
-    lhs = lhs -> next;
+    tmp = lhs->next;
+    newlist -> next = lhs;
+    lhs = tmp;
     //newlist -> next = NULL;
   }
   while(rhs != NULL){
-    newlist -> next = rhs -> str ;
-    rhs = rhs -> next;
+    tmp = rhs->next;
+    newlist -> next = rhs;
+    rhs = tmp;
     //newlist -> next = NULL;
   }
   if(newlist != NULL){
