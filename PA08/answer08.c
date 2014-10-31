@@ -5,7 +5,7 @@
 #include "answer08.h"
 
 int (*compar)(const char *arg1, const char *arg2);
-List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2));
+List * List_merge(List * lhs, List * rhs, int (*compar)(const char *, const char *));
 int List_length(List * list);
 
 List * List_createNode(const char * str){
@@ -37,7 +37,7 @@ int List_length(List * list){
   return counter;
 }
 
-List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2)){
+List * List_merge(List * lhs, List * rhs, int (*compar)(const char *, const char *)){
   List* newlist = NULL;
   while(lhs != NULL && rhs != NULL){
     int determine = (*compar)(lhs -> str, rhs -> str);
@@ -64,7 +64,7 @@ List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const 
   return newlist;
 }
 
-List * List_sort(List * list, int (*compar)(const char *arg1, const char *arg2)){
+List * List_sort(List * list, int (*compar)(const char *, const char *)){
   if(List_length(list) <= 1){
     return list;
   }
