@@ -44,12 +44,14 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
     int determine = (*compar)(lhs -> str, rhs -> str);
     if(determine >= 0){
       tmp = rhs->next;
+      rhs->next = NULL;
       newlist -> next = rhs;
       rhs = tmp;
       
     }
     else{
       tmp = lhs->next;
+      lhs->next = NULL;
       newlist -> next = lhs;
       lhs = tmp;
     }
@@ -57,12 +59,14 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
   }
   while(lhs != NULL){
     tmp = lhs->next;
+    lhs->next = NULL;
     newlist -> next = lhs;
     lhs = tmp;
     //newlist -> next = NULL;
   }
   while(rhs != NULL){
     tmp = rhs->next;
+    rhs->next = NULL;
     newlist -> next = rhs;
     rhs = tmp;
     //newlist -> next = NULL;
