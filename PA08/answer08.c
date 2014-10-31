@@ -40,7 +40,7 @@ int List_length(List * list){
 List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2)){
   List* newlist = NULL;
   while(lhs != NULL && rhs != NULL){
-    int determine = comparefs(lhs -> str, rhs -> str);
+    int determine = (*compar)(lhs -> str, rhs -> str);
     if(determine >= 0){
       newlist -> str = lhs -> str;
       lhs = lhs->next;
