@@ -37,7 +37,7 @@ int List_length(List * list){
   return counter;
 }
 
-List * List_merge(List * lhs, List * rhs, (*compar)){
+List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2)){
   List* newlist = NULL;
   while(lhs != NULL && rhs != NULL){
     int determine = (*compar)(lhs -> str, rhs -> str);
@@ -64,7 +64,7 @@ List * List_merge(List * lhs, List * rhs, (*compar)){
   return newlist;
 }
 
-List * List_sort(List * list, (*compar)){
+List * List_sort(List * list, int (*compar)(const char *arg1, const char *arg2)){
   if(List_length(list) <= 1){
     return list;
   }
