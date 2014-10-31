@@ -67,9 +67,9 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
     rhs = tmp;
     //newlist -> next = NULL;
   }
-  if(newlist != NULL){
-  newlist -> next = NULL;
-  }
+  //if(newlist != NULL){
+  //newlist -> next = NULL;
+  //}
   return newlist;
 }
 
