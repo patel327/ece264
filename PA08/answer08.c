@@ -4,8 +4,8 @@
 #include <libgen.h>
 #include "answer08.h"
 
-int comparefs(const void *arg1, const void *arg2);
-List * List_merge(List * lhs, List * rhs, int comparefs(const void *arg1, const void *arg2));
+int (*compar)(const char *arg1, const char *arg2);
+List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2));
 int List_length(List * list);
 
 List * List_createNode(const char * str){
@@ -37,7 +37,7 @@ int List_length(List * list){
   return counter;
 }
 
-List * List_merge(List * lhs, List * rhs, int comparefs(const void *arg1, const void *arg2)){
+List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2)){
   List* newlist = NULL;
   while(lhs != NULL && rhs != NULL){
     int determine = comparefs(lhs -> str, rhs -> str);
@@ -64,14 +64,14 @@ List * List_merge(List * lhs, List * rhs, int comparefs(const void *arg1, const 
   return newlist;
 }
 
-List * List_sort(List * list, int comparefs(const void *arg1, const void *arg2)){
+List * List_sort(List * list, int (*compar)(const char *arg1, const char *arg2)){
   if(List_length(list) <= 1){
     return list;
   }
   
 }
 
-int comparefs(const void *arg1, const void *arg2)
+int (*compar)(const char *arg1, const char *arg2)
 {
   const char * const * ptr1 = (const char **) arg1;
   const char * const * ptr2 = (const char **) arg2;
