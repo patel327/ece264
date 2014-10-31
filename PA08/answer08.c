@@ -11,7 +11,7 @@ int List_length(List * list);
 List * List_createNode(const char * str){
   List * head = malloc(sizeof(List));
   head -> next = NULL;
-  head -> str = strdup(str)
+  head -> str = strdup(str);
   
   return head;
 }
@@ -30,7 +30,7 @@ int List_length(List * list){
     return 0;
   }
   int counter = 1;
-  while(list -> nest != NULL){
+  while(list -> next != NULL){
     counter++;
     list = list.next;
   }
