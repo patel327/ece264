@@ -46,8 +46,8 @@ List * List_merge(List * lhs, List * rhs, comparefs){
       lhs = lhs->next;
     }
     else{
-      newlist -> str = rhs -> str
-      rhs = rhs -> next
+      newlist -> str = rhs -> str;
+      rhs = rhs -> next;
     }
     newlist -> next = NULL;
   }
