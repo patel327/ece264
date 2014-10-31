@@ -39,15 +39,19 @@ int List_length(List * list){
 
 List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const char *arg2)){
   List* newlist = NULL;
+  List* tmp = NULL;
   while(lhs != NULL && rhs != NULL){
     int determine = (*compar)(lhs -> str, rhs -> str);
     if(determine >= 0){
-      newlist -> next = lhs -> str;
-      lhs = lhs->next;
+      tmp = rhs->next;
+      newlist -> next = rhs;
+      rhs = tmp;
+      
     }
     else{
-      newlist -> next = rhs -> str;
-      rhs = rhs -> next;
+      tmp = lhs->next;
+      newlist -> next = lhs;
+      lhs = tmp;
     }
     //newlist -> next = NULL;
   }
@@ -61,7 +65,9 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
     rhs = rhs -> next;
     //newlist -> next = NULL;
   }
+  if(newlist != NULL){
   newlist -> next = NULL;
+  }
   return newlist;
 }
 
