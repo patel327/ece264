@@ -4,7 +4,7 @@
 #include <libgen.h>
 #include "answer08.h"
 
-int (compar)(const char *arg1, const char *arg2);
+int compar(const char *arg1, const char *arg2);
 List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2));
 int List_length(List * list);
 
@@ -71,7 +71,7 @@ List * List_sort(List * list, int (*compar)(const char *arg1, const char *arg2))
   
 }
 
-int (compar)(const char *arg1, const char *arg2)
+int compar(const char *arg1, const char *arg2)
 {
   const char * const * ptr1 = (const char **) arg1;
   const char * const * ptr2 = (const char **) arg2;
