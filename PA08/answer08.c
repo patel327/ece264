@@ -46,7 +46,7 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
     if(determine >= 0){
       tmp = rhs->next;
       rhs->next = NULL;
-      List_append(newlist, rhs);
+      newlist = List_append(newlist, rhs);
       rhs = tmp;
       
     }
