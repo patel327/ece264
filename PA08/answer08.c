@@ -96,8 +96,8 @@ void * List_split(List * list, List ** front, List ** back){
     *front = list;
     *back = NULL;
   }
-  list * a = NULL;
-  list * b =NULL;
+  List * a = NULL;
+  List * b =NULL;
   a = list;
   b = list->next;
   while(b !=NULL){
