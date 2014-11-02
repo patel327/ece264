@@ -53,7 +53,7 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
     else{
       tmp = lhs->next;
       lhs->next = NULL;
-      List_append(newlist, lhs);
+      newlist= List_append(newlist, lhs);
       lhs = tmp;
     }
     //newlist -> next = NULL;
@@ -61,14 +61,14 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
   while(lhs != NULL){
     tmp = lhs->next;
     lhs->next = NULL;
-    List_append(newlist, lhs);
+    newlist = List_append(newlist, lhs);
     lhs = tmp;
     //newlist -> next = NULL;
   }
   while(rhs != NULL){
     tmp = rhs->next;
     rhs->next = NULL;
-    List_append(newlist, rhs);
+    newlist = List_append(newlist, rhs);
     rhs = tmp;
     //newlist -> next = NULL;
   }
