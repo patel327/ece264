@@ -110,7 +110,7 @@ void * List_split(List * list, List ** front, List ** back){
   }
   *front = list;
   *back = a->next;
-  //a->next = NULL;
+  a->next = NULL;
 }
 
 List * List_append(List * list,List * node){
