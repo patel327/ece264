@@ -86,9 +86,9 @@ List * List_sort(List * list,int (*compar)(const char *arg1, const char *arg2)){
   List * front;
   List * back;
   List_split(list,&front,&back);
-  List_sort(front, (*compar));
-  List_sort(back, (*compar));
-  list = List_merge(front,back,(*compar));
+  List_sort(front, compar);
+  List_sort(back, compar);
+  list = List_merge(front,back,compar);
   return list;
 }
 
