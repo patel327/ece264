@@ -7,6 +7,7 @@
 int compar(const char *arg1, const char *arg2);
 List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2));
 int List_length(List * list);
+List * List_append(List * list,List * node);
 
 List * List_createNode(const char * str){
   List * head = malloc(sizeof(List));
@@ -45,14 +46,14 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
     if(determine >= 0){
       tmp = rhs->next;
       rhs->next = NULL;
-      newlist = List_append(newlist, rhs);
+      List_append(newlist, rhs);
       rhs = tmp;
       
     }
     else{
       tmp = lhs->next;
       lhs->next = NULL;
-      newlist = List_append(newlist, lhs);
+      List_append(newlist, lhs);
       lhs = tmp;
     }
     //newlist -> next = NULL;
@@ -60,14 +61,14 @@ List * List_merge(List * lhs, List * rhs,int (*compar)(const char *arg1, const c
   while(lhs != NULL){
     tmp = lhs->next;
     lhs->next = NULL;
-    newlist = List_append(newlist, lhs);
+    List_append(newlist, lhs);
     lhs = tmp;
     //newlist -> next = NULL;
   }
   while(rhs != NULL){
     tmp = rhs->next;
     rhs->next = NULL;
-    newlist = List_append(newlist, rhs);
+    List_append(newlist, rhs);
     rhs = tmp;
     //newlist -> next = NULL;
   }
@@ -88,7 +89,7 @@ List * List_append(List * list,List * node){
   if(list == NULL){
     return node;
   }
-  List* curr = list
+  List* curr = list;
   while(curr->next != NULL){
     curr = curr-> next;
   }
