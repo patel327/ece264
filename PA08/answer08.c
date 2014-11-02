@@ -8,6 +8,7 @@ int compar(const char *arg1, const char *arg2);
 List * List_merge(List * lhs, List * rhs, int (*compar)(const char *arg1, const char *arg2));
 int List_length(List * list);
 List * List_append(List * list,List * node);
+void * List_split(List * list, List ** front, List ** back);
 
 List * List_createNode(const char * str){
   List * head = malloc(sizeof(List));
