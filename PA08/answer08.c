@@ -82,7 +82,34 @@ List * List_sort(List * list,int (*compar)(const char *arg1, const char *arg2)){
   if(List_length(list) <= 1){
     return list;
   }
+  List * front;
+  List * back;
+  List_split(list,&front,&back);
+  List_sort(front,int (*compar)(const char *arg1, const char *arg2));
+  List_sort(back,int (*compar)(const char *arg1, const char *arg2));
+  List_merge(front,back,int (*compar)(const char *arg1, const char *arg2))
   
+}
+
+void * List_split(List * list, List ** front, List ** back){
+  if(List_length(list) <= 1){
+    *front = list;
+    *back = NULL;
+  }
+  list * a = NULL;
+  list * b =NULL;
+  a = list;
+  b = list->next;
+  while(b !=NULL){
+    b = b->next;
+    if(b !=NULL){
+      b = b->next;
+      a = a->next;
+    }
+  }
+  *front = list;
+  *back = a->next;
+  a->next = NULL;
 }
 
 List * List_append(List * list,List * node){
