@@ -45,7 +45,7 @@ load_tree_from_file(char * filename){
   char mystring [2000];
   char** arrstr;
   myfile = fopen(filename , "r");
-  while(fgets(mystring, 2000, myfile) != EOF){
+  while(fgets(mystring, 2000, myfile) != NULL){
   fgets(mystring, 2000, myfile);
   arrstr = explode(mystring, "\t");
   BusinessNode * node = create_node(strdup(arrstr[0]),strdup(arrstr[1]),strdup(arrstr[2]));
