@@ -37,6 +37,7 @@ tree_insert(BusinessNode * node, BusinessNode * root){
 
 BusinessNode *
 load_tree_from_file(char * filename){
+  BusinessNode * root = NULL;
   if(filename != "yelp_businesses.tsv"){
     return NULL;
   }
@@ -46,7 +47,7 @@ load_tree_from_file(char * filename){
   myfile = fopen(filename , "r");
   fgets(mystring, 2000, myfile);
   arrstr = explode(mystring, "\t");
-  node* = create_node(strdup(arrstr[0]),strdup(arrstr[1]),strdup(arrstr[2]));
+  BusinessNode * node = create_node(strdup(arrstr[0]),strdup(arrstr[1]),strdup(arrstr[2]));
   tree_insert(node, root);
   //have to do while loop and still have to fclose
 }
