@@ -24,6 +24,9 @@ tree_insert(BusinessNode * node, BusinessNode * root){
   if(root == NULL){
     return node;
   }
+  if(node == NULL){
+    return root;
+  }
   if(strcmp(node -> name, root -> name) == -1 || strcmp(node -> name, root -> name == 0)){
     tree_insert(node, root -> left);
     return root;
@@ -40,7 +43,7 @@ load_tree_from_file(char * filename){
   FILE * myfile;
   char mystring [2000];
   char** arrstr;
-  myfile = fopen("yelp_businesses.tsv" , "r");
+  myfile = fopen(filename , "r");
   fgets(mystring, 2000, myfile);
   arrstr = explode(mystring, "\t");
   node* = create_node(strdup(arrstr[0]),strdup(arrstr[1]),strdup(arrstr[2]));
@@ -59,7 +62,7 @@ destroy_tree(BusinessNode * root){
 }
 
 
-char ** explode(const char * str, const char * delims, /*int * arrLen*/)
+char ** explode(const char * str, const char * delims/*, int * arrLen*/)
 {
   int ind;
   int N = 0;
@@ -71,7 +74,7 @@ char ** explode(const char * str, const char * delims, /*int * arrLen*/)
         }
     }
   char**arrstr = malloc(sizeof(char*)*(N+1));
-  *arrLen = N + 1;
+  //*arrLen = N + 1;
   //int row;
   ind = 0;
   int last = 0;
