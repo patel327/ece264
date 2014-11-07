@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include "answer09.h"
 
+char ** explode(const char * str, const char * delims, int * arrLen);
+BusinessNode * tree_insert(BusinessNode * node, BusinessNode * root);
+BusinessNode * create_node(char * stars, char * name, char * address);
+
 BusinessNode *
 create_node(char * stars, char * name, char * address){
   BusinessNode * node;
@@ -17,12 +21,22 @@ create_node(char * stars, char * name, char * address){
 
 BusinessNode *
 tree_insert(BusinessNode * node, BusinessNode * root){
-  
+  if(root == NULL){
+    return node;
+  }
+  if(strcmp(node -> name, root -> name) == -1 || strcmp(node -> name, root -> name == 0)){
+    tree_insert(node, root -> left);
+    return root;
+  }
+  tree_insert(node, root -> right);
+  return root;
 }
 
 BusinessNode *
 load_tree_from_file(char * filename){
-  
+  if(filename != "yelp_businesses.tsv"){
+    return NULL;
+  }
 }
 
 BusinessNode *
