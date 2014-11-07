@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "answer09.h"
 
-char ** explode(const char * str, const char * delims, int * arrLen);
+char ** explode(const char * str, const char * delims/*, int * arrLen*/);
 BusinessNode * tree_insert(BusinessNode * node, BusinessNode * root);
 BusinessNode * create_node(char * stars, char * name, char * address);
 
@@ -13,9 +13,9 @@ create_node(char * stars, char * name, char * address){
   node = malloc(sizeof(BusinessNode));
   node -> left = NULL;
   node -> right = NULL;
-  node -> name = NULL;
-  node -> stars = NULL;
-  node -> address = NULL;
+  node -> name = name;
+  node -> stars = stars;
+  node -> address = address;
   return node;
 }
 
@@ -37,6 +37,15 @@ load_tree_from_file(char * filename){
   if(filename != "yelp_businesses.tsv"){
     return NULL;
   }
+  FILE * myfile;
+  char mystring [2000];
+  char** arrstr;
+  myfile = fopen("yelp_businesses.tsv" , "r");
+  fgets(mystring, 2000, myfile);
+  arrstr = explode(mystring, "\t");
+  node* = create_node(strdup(arrstr[0]),strdup(arrstr[1]),strdup(arrstr[2]));
+  tree_insert(node, root);
+  //have to do while loop and still have to fclose
 }
 
 BusinessNode *
@@ -50,7 +59,7 @@ destroy_tree(BusinessNode * root){
 }
 
 
-char ** explode(const char * str, const char * delims, int * arrLen)
+char ** explode(const char * str, const char * delims, /*int * arrLen*/)
 {
   int ind;
   int N = 0;
