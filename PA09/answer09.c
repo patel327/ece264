@@ -27,11 +27,11 @@ tree_insert(BusinessNode * node, BusinessNode * root){
   if(node == NULL){
     return root;
   }
-  if(strcmp(node -> name, root -> name) == -1 || strcmp(node -> name, root -> name == 0)){
-    tree_insert(node, root -> left);
+  if(strcmp(node -> name, root -> name) <= 0){
+    root = tree_insert(node, root -> left);
     return root;
   }
-  tree_insert(node, root -> right);
+  root = tree_insert(node, root -> right);
   return root;
 }
 
@@ -59,7 +59,15 @@ tree_search_name(char * name, BusinessNode * root){
 
 void
 destroy_tree(BusinessNode * root){
-  
+  if(root == NULL){
+    return;
+  }
+  destroy_tree(root -> left);
+  destroy_tree(root -> right);
+  free(root -> name);
+  free(root -> stars);
+  free(root -> address);
+  free(root);
 }
 
 
