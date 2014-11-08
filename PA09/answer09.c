@@ -79,11 +79,11 @@ tree_search_name(char * name, BusinessNode * root){
     root = tree_search_name(name, root -> left);
   }
   //if(root -> right != NULL){
-  else{
+  //else{
   //if((strcmp(name, root -> name)) > 0){
     root = tree_search_name(name, root -> right);
-  }
-  return NULL;
+  //}
+  return root;
 }
 
 void
