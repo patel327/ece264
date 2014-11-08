@@ -38,14 +38,17 @@ tree_insert(BusinessNode * node, BusinessNode * root){
 BusinessNode *
 load_tree_from_file(char * filename){
   BusinessNode * root = NULL;
-  if(filename != "yelp_businesses.tsv"){
-    return NULL;
-  }
+  //if(filename != "yelp_businesses.tsv"){
+  //  return NULL;
+  //}
   FILE * myfile;
   char mystring [2000];
   int* len = NULL;
   char** arrstr;
   myfile = fopen(filename , "r");
+  if(myfile == NULL){
+    return NULL;
+  }
   while(fgets(mystring, 2000, myfile) != NULL){
 
   arrstr = explode(mystring, "\t", len);
