@@ -28,10 +28,10 @@ tree_insert(BusinessNode * node, BusinessNode * root){
     return root;
   }
   if(strcmp(node -> name, root -> name) <= 0){
-    root = tree_insert(node, root -> left);
+    root -> left = tree_insert(node, root -> left);
     return root;
   }
-  root = tree_insert(node, root -> right);
+  root -> right = tree_insert(node, root -> right);
   return root;
 }
 
