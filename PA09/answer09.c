@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "answer09.h"
 
-char ** explode(const char * str, const char * delims, int * arrLen);
+char ** explode(const char * str, const char * delims/*, int * arrLen*/);
 BusinessNode * tree_insert(BusinessNode * node, BusinessNode * root);
 BusinessNode * create_node(char * stars, char * name, char * address);
 
@@ -43,7 +43,7 @@ load_tree_from_file(char * filename){
   //}
   FILE * myfile;
   char mystring [2000];
-  int* len = NULL;
+  //int* len = NULL;
   char** arrstr;
   myfile = fopen(filename , "r");
   if(myfile == NULL){
@@ -51,11 +51,11 @@ load_tree_from_file(char * filename){
   }
   while(fgets(mystring, 2000, myfile) != NULL){
 
-  arrstr = explode(mystring, "\t", len);
-  if(*len == 3){
+  arrstr = explode(mystring, "\t"/*, len*/);
+  //if(*len == 3){
   BusinessNode * node = create_node(arrstr[0],arrstr[1],arrstr[2]);
   root = tree_insert(node, root);
-  }
+  //}
   }
   fclose(myfile);
   //have to do while loop and still have to fclose
@@ -81,7 +81,7 @@ destroy_tree(BusinessNode * root){
 }
 
 
-char ** explode(const char * str, const char * delims, int * arrLen)
+char ** explode(const char * str, const char * delims/*, int * arrLen*/)
 {
   int ind;
   int N = 0;
@@ -93,7 +93,7 @@ char ** explode(const char * str, const char * delims, int * arrLen)
         }
     }
   char**arrstr = malloc(sizeof(char*)*(N+1));
-  *arrLen = N + 1;
+  //*arrLen = N + 1;
   //int row;
   ind = 0;
   int last = 0;
