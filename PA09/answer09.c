@@ -24,14 +24,14 @@ tree_insert(BusinessNode * node, BusinessNode * root){
   if(root == NULL){
     return node;
   }
-  if(node == NULL){
-    return root;
-  }
+//  if(node == NULL){
+//    return root;
+//  }
   if(strcmp(node -> name, root -> name) <= 0){
     root -> left = tree_insert(node, root -> left);
     return root;
   }
-  root -> right = tree_insert(node, root -> right);
+  root -> right = tree_insert(node -> name, root -> right);
   return root;
 }
 
