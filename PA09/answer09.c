@@ -75,13 +75,13 @@ tree_search_name(char * name, BusinessNode * root){
     return root;
   }
   //if(root -> left != NULL){
-  if((strcmp(name, root -> name)) < 0){
-    root = tree_search_name(name, root -> left);
+  if((strcmp(name, root -> name)) > 0){
+    root = tree_search_name(name, root -> right);
   }
   //if(root -> right != NULL){
   //else{
   //if((strcmp(name, root -> name)) > 0){
-    root = tree_search_name(name, root -> right);
+    root = tree_search_name(name, root -> left);
   //}
   return root;
 }
