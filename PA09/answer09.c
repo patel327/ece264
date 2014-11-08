@@ -68,7 +68,18 @@ load_tree_from_file(char * filename){
 
 BusinessNode *
 tree_search_name(char * name, BusinessNode * root){
-  
+  if(root->name == name){
+    return root;
+  }
+  if(root == NULL){
+    return NULL;
+  }
+  if(strcmp(name, root -> name) <= 0){
+    root = tree_search_name(name, root -> left);
+  }
+  if(strcmp(name, root -> name) > 0){
+    root = tree_search_name(name, root -> right);
+  }
 }
 
 void
