@@ -49,7 +49,7 @@ load_tree_from_file(char * filename){
   while(fgets(mystring, 2000, myfile) != NULL){
 
   arrstr = explode(mystring, "\t", len);
-  if(&len != 3){
+  if(*len != 3){
   BusinessNode * node = create_node(arrstr[0],arrstr[1],arrstr[2]);
   root = tree_insert(node, root);
   }
