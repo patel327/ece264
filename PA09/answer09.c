@@ -31,7 +31,7 @@ tree_insert(BusinessNode * node, BusinessNode * root){
     root -> left = tree_insert(node, root -> left);
     return root;
   }
-  root -> right = tree_insert(node -> name, root -> right);
+  root -> right = tree_insert(node, root -> right);
   return root;
 }
 
