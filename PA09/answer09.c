@@ -56,6 +56,7 @@ load_tree_from_file(char * filename){
   }
   fclose(myfile);
   //have to do while loop and still have to fclose
+  return root;
 }
 
 BusinessNode *
