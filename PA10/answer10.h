@@ -16,20 +16,20 @@ struct Location {
 	char* state;                /* 2 uppercase letters */
 	char* zip_code;             /* 5 digits */
 	struct Review* reviews;     /* ARRAY of Review struct objects */
-	uint32_t num_reviews;       /* size of the array */
+	uint32_t num_reviews;       /* size of the above array */
 };
 
 struct Business {
 	char* name;                 /* Business name, e.g., "McDonald's" */
 	struct Location* locations; /* ARRAY of Location struct objects */
-	uint32_t num_locations;     /* size of the array */
+	uint32_t num_locations;     /* size of the above array */
 	/* Note that we do not include the average star rating with the Business. */
 };
 
 struct YelpDataBST;
-/* You define this struct in your answerXX.c file.  There are different ways
- * you might choose to structure it.  This object is probably NOT the root
- * node of the tree, although it might be an attribute of this object.
+/* You define this struct in your answer10.c file.  There are different ways
+ * you might choose to structure it.  This YelpDataBST object is probably NOT the root
+ * node of the tree, although the root node might be an attribute of this YelpDataBST object.
  */
 
 struct YelpDataBST* create_business_bst(const char* businesses_path,
@@ -52,7 +52,7 @@ struct YelpDataBST* create_business_bst(const char* businesses_path,
 
 struct Business* get_business_reviews(struct YelpDataBST* bst,
                                       char* name, char* state, char* zip_code);
-/* get_reviews(..) should return a pointer to a Business struct object
+/* get_business_reviews(...) should return a pointer to a Business struct object
  * on the heap.  That object will include links to the individual locations.
  * For example, if "McDonald's" is the business, then there would be thousands
  * of locations.  Each Location struct object in turn contains links to
@@ -76,7 +76,7 @@ struct Business* get_business_reviews(struct YelpDataBST* bst,
 
 
 void destroy_business_bst(struct YelpDataBST* bst);
-/* Deallocate all memory allocated by the object returned
+/* Deallocate all memory allocated for the object returned
  * by create_business_bst(..) and close the files. */
 
 void destroy_business_result(struct Business* b);
