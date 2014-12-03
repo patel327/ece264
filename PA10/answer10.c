@@ -3,6 +3,15 @@
 #include <stdlib.h>
 #include "answer10.h"
 
+typedef struct node {
+  
+}busnode;
+
+typedef struct YelpDataBST {
+  FILE * busptr;
+  FILE * revptr;
+  busnode * root;
+} YelpDataBST;
 
 struct YelpDataBST* create_business_bst(const char* businesses_path,
 const char* reviews_path){
