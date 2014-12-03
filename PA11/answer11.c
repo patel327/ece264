@@ -147,7 +147,7 @@ int readBit(FILE * fptr, unsigned char * bit, unsigned char * whichbit, unsigned
   if(ret != 1){
     return -1;
   }
-  unsigned char temp = (*curbyte) >> (8 - (*whichbit));
+  unsigned char temp = (*curbyte) >> (7 - (*whichbit));
   temp = temp & 0X01;
   *whichbit = ((*whichbit) + 1) % 8;
   *bit = temp;
