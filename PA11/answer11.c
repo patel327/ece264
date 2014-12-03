@@ -74,10 +74,72 @@ void Stack_popPopCombinePush(Stack * stack){
 }
 
 HuffNode * HuffTree_readTextHeader(FILE * fp){
-  
-  return;
+  Stack * stack = Stack_create();
+  int num = 0;
+  while(num != EOF){
+    num = fgetc(fp);
+    if(num == 1){
+      HuffNode * ascchar = HuffNode_create(fgetc(fp));
+      Stack_pushFront(stack, ascchar)
+    }
+    if(num ==0){
+      Stack_popPopCombinePush(stack);
+      if(stack->head->next == NULL){
+        free(stack -> head);
+        free(stack);
+        return ascchar;}
+    }
+  }
 }
 
 HuffNode * HuffTree_readBinaryHeader(FILE * fp){
-  return;
+  int done = 0;
+  unsigned char whichbit = 0;
+  unsigned char curbyte = 0;
+  unsigned char onebit = 0;
+  StackNode * head = NULL;
+  while(done == 0)
+  {
+    readBit(fp, &onebit, &whichbit, &curbyte);
+    if (onebit == 1){
+      int bitcount;
+      unsigned char value = 0;
+      for (bitcount = 0; bitcount <8; bitcount ++)
+      {
+        value <<= 1;
+        readBit(fp, &onebit, &whichbit, &curbyte);
+        value |= onebit;
+      }
+      HuffNode * tn = HuffNode_create(value);
+      StackNode * ln = StackNode_create();
+      Stack_pushFront(ln, tn);
+    }
+    else{
+      if(ln -> head -> next == NULL){
+        done = 1;
+      }
+      else{
+        StackpopPopCombinePush(tn);
+      }
+    }
+  }
+  HuffNode * root = ln -> head -> tree
+  free(ln -> head);
+  free(ln);
+  return root;
+}
+
+int readBit(FILE * fptr, unsigned char * bit, unsigned char * whichbit, unsigned char * curbyte){
+  int ret = 1;
+  if((*whichbit) == 0){
+    ret = fread(curbyte, sizeof(unsigned char), 1 ,fptr);
+  }
+  if(ret != 1){
+    return -1;
+  }
+  unsigned char temp = (*curbyte) >> (8 - (*whichbit));
+  temp = temp & 0X01;
+  *whichbit = ((*whichbit) + 1) % 8;
+  *bit = temp
+  return 1;
 }
