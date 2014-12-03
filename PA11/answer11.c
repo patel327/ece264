@@ -87,7 +87,7 @@ HuffNode * HuffTree_readTextHeader(FILE * fp){
   while(num != EOF){
     num = fgetc(fp);
     if(num == 1){
-      HuffNode * ascchar = HuffNode_create(fgetc(fp));
+      ascchar = HuffNode_create(fgetc(fp));
       Stack_pushFront(stack, ascchar);
     }
     if(num ==0){
@@ -106,6 +106,8 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
   unsigned char curbyte = 0;
   unsigned char onebit = 0;
   StackNode * head = NULL;
+  HuffNode * tn;
+  Stack * ln;
   while(done == 0)
   {
     readBit(fp, &onebit, &whichbit, &curbyte);
@@ -118,8 +120,8 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
         readBit(fp, &onebit, &whichbit, &curbyte);
         value |= onebit;
       }
-      HuffNode * tn = HuffNode_create(value);
-      Stack * ln = Stack_create();
+      tn = HuffNode_create(value);
+      ln = Stack_create();
       Stack_pushFront(ln, tn);
     }
     else{
@@ -148,6 +150,6 @@ int readBit(FILE * fptr, unsigned char * bit, unsigned char * whichbit, unsigned
   unsigned char temp = (*curbyte) >> (8 - (*whichbit));
   temp = temp & 0X01;
   *whichbit = ((*whichbit) + 1) % 8;
-  *bit = temp
+  *bit = temp;
   return 1;
 }
