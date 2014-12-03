@@ -129,7 +129,7 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
         done = 1;
       }
       else{
-        Stack_popPopCombinePush(tn);
+        Stack_popPopCombinePush(ln);
       }
     }
   }
