@@ -49,6 +49,7 @@ int Stack_isEmpty(Stack * stack){
 
 HuffNode * Stack_popFront(Stack * stack){
   HuffNode * tempnode = stack -> head -> tree;
+  Stack * tempstack = NULL;
   tempstack -> head = stack -> head -> next;
   stack -> head -> next = NULL;
   free(stack -> head);
@@ -68,7 +69,7 @@ void Stack_popPopCombinePush(Stack * stack){
   HuffNode * combine = HuffNode_create(1);
   combine -> left = pop1;
   combine -> right = pop2;
-  combine -> value = NULL;
+  //combine -> value = NULL;
   Stack_pushFront(stack, combine);
 }
 
