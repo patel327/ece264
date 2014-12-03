@@ -54,11 +54,11 @@ int Stack_isEmpty(Stack * stack){
 
 HuffNode * Stack_popFront(Stack * stack){
   HuffNode * tempnode = stack -> head -> tree;
-  Stack * tempstack = NULL;
-  tempstack -> head = stack -> head -> next;
-  stack -> head -> next = NULL;
+  StackNode * tempstack = NULL;
+  tempstack = stack -> head -> next;
+  //stack -> head -> next = NULL;
   free(stack -> head);
-  stack -> head = tempstack -> head;
+  stack -> head = tempstack;
   return(tempnode);
 }
 
