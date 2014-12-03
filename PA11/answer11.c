@@ -80,7 +80,7 @@ HuffNode * HuffTree_readTextHeader(FILE * fp){
     num = fgetc(fp);
     if(num == 1){
       HuffNode * ascchar = HuffNode_create(fgetc(fp));
-      Stack_pushFront(stack, ascchar)
+      Stack_pushFront(stack, ascchar);
     }
     if(num ==0){
       Stack_popPopCombinePush(stack);
