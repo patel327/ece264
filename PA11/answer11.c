@@ -29,9 +29,7 @@ void HuffNode_destroy(HuffNode * tree){
 
 Stack * Stack_create(){
   Stack * newstack = malloc(sizeof(Stack));
-  newstack -> head = malloc(sizeof(StackNode));
-  newstack -> head -> tree = NULL;
-  newstack -> head -> next = NULL;
+  newstack -> head = NULL;
   return newstack;
 }
 
