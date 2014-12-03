@@ -1,1 +1,68 @@
-//Kappa
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "answer11.h"
+
+HuffNode * HuffNode_create(int value){
+  HuffNode * node = malloc(sizeof(HuffNode));
+  node -> value = value;
+  node -> left = NULL;
+  node -> right = NULL;
+  return node;
+}
+
+void HuffNode_destroy(HuffNode * tree){
+  if(tree == NULL){
+    return;
+  }
+  HuffNode_destroy(tree -> left);
+  HuffNode_destroy(tree -> right);
+  free(tree);
+}
+
+Stack * Stack_create(){
+  Stack * newstack = malloc(sizeof(Stack));
+  newstack -> head = NULL;
+  return newstack;
+}
+
+void Stack_destroy(Stack * stack){
+  if(stack == NULL){
+    return;
+  }
+  while(stack -> head != NULL){
+  HuffNode_destroy(stack -> head -> tree);
+  stack -> head = stack -> head -> next;
+  }
+  free(stack);
+}
+
+int Stack_isEmpty(Stack * stack){
+  if (stack == NULL){
+    return 1;
+  }
+  return 0;
+}
+
+HuffNode * Stack_popFront(Stack * stack){
+  Stack * tempstack;
+  tempstack -> head = stack -> head;
+  stack -> head = stack -> head -> next;
+  return(tempstack -> head -> tree);
+}
+
+void Stack_pushFront(Stack * stack, HuffNode * tree){
+  
+}
+
+void Stack_popPopCombinePush(Stack * stack){
+  
+}
+
+HuffNode * HuffTree_readTextHeader(FILE * fp){
+  return;
+}
+
+HuffNode * HuffTree_readBinaryHeader(FILE * fp){
+  return;
+}
