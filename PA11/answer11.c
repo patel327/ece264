@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include "answer11.h"
 
+int readBit(FILE * fptr, unsigned char * bit, unsigned char * whichbit, unsigned char * curbyte);
+HuffNode * HuffNode_create(int value);
+void Stack_popPopCombinePush(Stack * stack);
+Stack * Stack_create();
+HuffNode * Stack_popFront(Stack * stack);
+void Stack_pushFront(Stack * stack, HuffNode * tree);
+
 HuffNode * HuffNode_create(int value){
   HuffNode * node = malloc(sizeof(HuffNode));
   node -> value = value;
@@ -111,7 +118,7 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
         value |= onebit;
       }
       HuffNode * tn = HuffNode_create(value);
-      StackNode * ln = StackNode_create();
+      StackNode * ln = Stack_create();
       Stack_pushFront(ln, tn);
     }
     else{
