@@ -81,6 +81,7 @@ void Stack_popPopCombinePush(Stack * stack){
 }
 
 HuffNode * HuffTree_readTextHeader(FILE * fp){
+  HuffNode * ascchar;
   Stack * stack = Stack_create();
   int num = 0;
   while(num != EOF){
@@ -118,7 +119,7 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
         value |= onebit;
       }
       HuffNode * tn = HuffNode_create(value);
-      StackNode * ln = Stack_create();
+      Stack * ln = Stack_create();
       Stack_pushFront(ln, tn);
     }
     else{
@@ -126,11 +127,11 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
         done = 1;
       }
       else{
-        StackpopPopCombinePush(tn);
+        Stack_popPopCombinePush(tn);
       }
     }
   }
-  HuffNode * root = ln -> head -> tree
+  HuffNode * root = ln -> head -> tree;
   free(ln -> head);
   free(ln);
   return root;
