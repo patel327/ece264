@@ -54,7 +54,7 @@ int Stack_isEmpty(Stack * stack){
 
 HuffNode * Stack_popFront(Stack * stack){
   HuffNode * tempnode = stack -> head -> tree;
-  StackNode * tempstack = NULL;
+  StackNode * tempstack = malloc(sizeof(StackNode));
   tempstack = stack -> head -> next;
   //stack -> head -> next = NULL;
   free(stack -> head);
@@ -66,6 +66,7 @@ void Stack_pushFront(Stack * stack, HuffNode * tree){
   StackNode * node = malloc(sizeof(StackNode));
   node -> tree = tree;
   node -> next = stack -> head;
+  stack -> head = node;
 }
 
 void Stack_popPopCombinePush(Stack * stack){
