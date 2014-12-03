@@ -54,8 +54,8 @@ int Stack_isEmpty(Stack * stack){
 
 HuffNode * Stack_popFront(Stack * stack){
   HuffNode * tempnode = stack -> head -> tree;
-  StackNode * tempstack = malloc(sizeof(StackNode));
-  tempstack = stack -> head -> next;
+  StackNode * tempstack = stack -> head -> next;
+  //tempstack = stack -> head -> next;
   //stack -> head -> next = NULL;
   free(stack -> head);
   stack -> head = tempstack;
