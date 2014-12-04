@@ -80,21 +80,21 @@ void Stack_popPopCombinePush(Stack * stack){
 }
 
 HuffNode * HuffTree_readTextHeader(FILE * fp){
-  HuffNode * ascchar;
+  HuffNode * tree;
   Stack * stack = Stack_create();
   int num = 0;
   while(num != EOF){
     num = fgetc(fp);
     if(num == 1){
-      ascchar = HuffNode_create(fgetc(fp));
-      Stack_pushFront(stack, ascchar);
+      tree = HuffNode_create(fgetc(fp));
+      Stack_pushFront(stack, tree);
     }
     if(num ==0){
       Stack_popPopCombinePush(stack);
       if(stack->head->next == NULL){
         free(stack -> head);
         free(stack);
-        return ascchar;}
+        return tree;}
     }
   }
 }
