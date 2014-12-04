@@ -74,8 +74,8 @@ void Stack_popPopCombinePush(Stack * stack){
   HuffNode * pop1 = Stack_popFront(stack);
   HuffNode * pop2 = Stack_popFront(stack);
   HuffNode * combine = HuffNode_create(1);
-  combine -> left = pop1;
-  combine -> right = pop2;
+  combine -> right = pop1;
+  combine -> left = pop2;
   //combine -> value = NULL;
   Stack_pushFront(stack, combine);
 }
@@ -91,12 +91,14 @@ HuffNode * HuffTree_readTextHeader(FILE * fp){
       Stack_pushFront(stack, tree);
     }
     else{
-      Stack_popPopCombinePush(stack);
+
       if(stack->head->next == NULL){
         free(stack -> head);
         free(stack);
         return tree;}
+        Stack_popPopCombinePush(stack);
     }
+    
   }
 }
 
