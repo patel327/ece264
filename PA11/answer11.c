@@ -90,7 +90,7 @@ HuffNode * HuffTree_readTextHeader(FILE * fp){
       tree = HuffNode_create(fgetc(fp));
       Stack_pushFront(stack, tree);
     }
-    else{
+    if(num ==0){
 
       if(stack->head->next == NULL){
         free(stack -> head);
