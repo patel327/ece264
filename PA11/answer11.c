@@ -104,7 +104,7 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
   unsigned char whichbit = 0;
   unsigned char curbyte = 0;
   unsigned char onebit = 0;
-  StackNode * head = NULL;
+  //StackNode * head = NULL;
   HuffNode * tn;
   Stack * ln = Stack_create();
   while(done == 0)
