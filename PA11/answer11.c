@@ -83,7 +83,7 @@ HuffNode * HuffTree_readTextHeader(FILE * fp){
   HuffNode * tree;
   Stack * stack = Stack_create();
   int num = 0;
-  while(!feof(fp)){
+  while(1){
     num = fgetc(fp);
     if(num == 1){
       tree = HuffNode_create(fgetc(fp));
