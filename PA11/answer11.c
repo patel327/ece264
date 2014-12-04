@@ -38,9 +38,10 @@ void Stack_destroy(Stack * stack){
     return;
   }
   while(stack -> head != NULL){
+  StackNode * temp = stack->head->next;
   HuffNode_destroy(stack -> head -> tree);
-  stack -> head = stack -> head -> next;
   free(stack -> head);
+  stack -> head = temp;
   }
   free(stack);
 }
