@@ -93,16 +93,16 @@ HuffNode * HuffTree_readTextHeader(FILE * fp){
     if(num =='0'){
 
       if(stack->head->next == NULL){
-        free(stack -> head);
-        free(stack);
+      tree = popFront(stack);
+      Stack_destroy(stack);
         return tree;}
-        Stack_popPopCombinePush(stack);
+      Stack_popPopCombinePush(stack);
     }
     
   }
 }
 
-HuffNode * HuffTree_readBinaryHeader(FILE * fp){
+HuffNode * HuffTree_readBinaryHeader(FILE * fp){ //FROM PROFESSOR LU'S BOOK
   int done = 0;
   unsigned char whichbit = 0;
   unsigned char curbyte = 0;
@@ -141,7 +141,7 @@ HuffNode * HuffTree_readBinaryHeader(FILE * fp){
   return root;
 }
 
-int readBit(FILE * fptr, unsigned char * bit, unsigned char * whichbit, unsigned char * curbyte){
+int readBit(FILE * fptr, unsigned char * bit, unsigned char * whichbit, unsigned char * curbyte){ //FROM PROFESSOR LU'S BOOK
   int ret = 1;
   if((*whichbit) == 0){
     ret = fread(curbyte, sizeof(unsigned char), 1 ,fptr);
