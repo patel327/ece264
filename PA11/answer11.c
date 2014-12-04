@@ -93,7 +93,7 @@ HuffNode * HuffTree_readTextHeader(FILE * fp){
     if(num =='0'){
 
       if(stack->head->next == NULL){
-      tree = popFront(stack);
+      tree = Stack_popFront(stack);
       Stack_destroy(stack);
         return tree;}
       Stack_popPopCombinePush(stack);
