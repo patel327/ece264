@@ -83,14 +83,14 @@ void Stack_popPopCombinePush(Stack * stack){
 HuffNode * HuffTree_readTextHeader(FILE * fp){
   HuffNode * tree;
   Stack * stack = Stack_create();
-  int num = 0;
+  char num;
   while(1){
     num = fgetc(fp);
-    if(num == 1){
+    if(num == '1'){
       tree = HuffNode_create(fgetc(fp));
       Stack_pushFront(stack, tree);
     }
-    if(num ==0){
+    if(num =='0'){
 
       if(stack->head->next == NULL){
         free(stack -> head);
