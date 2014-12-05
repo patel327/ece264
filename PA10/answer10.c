@@ -5,7 +5,7 @@
 
 tree_insert(busnode * treenode, busnode * root);
 char ** explode(const char * str, const char * delims/*, int * arrLen*/);
-rofind(FILE * fp, int id);
+long int rofind(FILE * fp, int id);
 
 typedef struct locnode_tr{
   struct locnode_tr * next;
@@ -69,7 +69,7 @@ void destroy_business_result(struct Business* b){
   
 }
 
-rofind(FILE * fp, int id){
+long int rofind(FILE * fp, int id){
   char line[2000];
   char ** revarr;
   long int pos = ftell(fp);
