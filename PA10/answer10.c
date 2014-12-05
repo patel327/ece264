@@ -43,9 +43,10 @@ const char* reviews_path){
     tree_insert(treenode ,busbst -> root);
     locnode * locations = malloc(sizeof(locnode));
     locations -> bOffset = busoff;
-    locations -> id = busarr[0]
-    locations -> rOffset = 
+    locations -> id = atoi(busarr[0]);
+    locations -> rOffset = rofind(rptr, locations -> id);
     busoff = ftell(bptr);
+    free();
   }
   
   
@@ -64,6 +65,23 @@ void destroy_business_result(struct Business* b){
   
 }
 
+rofind(FILE * fp, int id){
+  char line[2000];
+  char ** revarr;
+  long int pos = ftell(fp);
+
+  while(fgets(line, 2000, fp)!= NULL){
+    revarr = explode(line, "\t");
+    if(atoi(revarr[0]) > id){
+      fseek(fp, pos, SEEK_SET)
+      return -1;
+    }
+    pos = ftell(fp);
+    free();
+  }
+  return pos;
+}
+
 tree_insert(busnode * treenode, busnode * root){
   if(root == NULL){
     return node;
@@ -71,11 +89,11 @@ tree_insert(busnode * treenode, busnode * root){
 // if(node == NULL){
 // return root;
 // }
-  if(strcmp(node -> name, root -> name) < 0){
+  if(strcasecmp(node -> name, root -> name) < 0){
     root -> left = tree_insert(node, root -> left);
     return root;
   }
-  if(strcmp(node -> name, root -> name) > 0){
+  if(strcasecmp(node -> name, root -> name) > 0){
     root -> right = tree_insert(node, root -> right);
     return root;
   }
