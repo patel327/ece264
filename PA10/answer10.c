@@ -102,6 +102,9 @@ busnode * tree_insert(busnode * treenode, busnode * root){
     root -> right = tree_insert(treenode, root -> right);
     return root;
   }
+  if(strcasecmp(treenode -> name, root -> name) == 0){
+    
+  }
 }
 
 char ** explode(const char * str, const char * delims/*, int * arrLen*/)
