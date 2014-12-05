@@ -103,7 +103,12 @@ busnode * tree_insert(busnode * treenode, busnode * root){
     return root;
   }
   if(strcasecmp(treenode -> name, root -> name) == 0){
-    
+    locnode * curr = root -> head;
+    while(curr -> next != NULL){
+      curr = curr-> next;
+    }
+    curr -> next = treenode -> head;
+    return root;
   }
 }
 
