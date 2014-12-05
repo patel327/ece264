@@ -60,7 +60,7 @@ const char* reviews_path){
     free(busarr[6]);
     free(busarr);
   }
-  
+  return busbst;
   
 }
 
@@ -115,14 +115,14 @@ busnode * tree_insert(busnode * treenode, busnode * root){
     root -> right = tree_insert(treenode, root -> right);
     return root;
   }
-  if(strcasecmp(treenode -> name, root -> name) == 0){
+  //if(strcasecmp(treenode -> name, root -> name) == 0){
     locnode * curr = root -> head;
     while(curr -> next != NULL){
       curr = curr-> next;
     }
     curr -> next = treenode -> head;
     return root;
-  }
+  //}
 }
 
 char ** explode(const char * str, const char * delims/*, int * arrLen*/)
