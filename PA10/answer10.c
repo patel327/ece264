@@ -95,11 +95,11 @@ busnode * tree_insert(busnode * treenode, busnode * root){
 // return root;
 // }
   if(strcasecmp(node -> name, root -> name) < 0){
-    root -> left = tree_insert(node, root -> left);
+    root -> left = tree_insert(treenode, root -> left);
     return root;
   }
   if(strcasecmp(node -> name, root -> name) > 0){
-    root -> right = tree_insert(node, root -> right);
+    root -> right = tree_insert(treenode, root -> right);
     return root;
   }
 }
