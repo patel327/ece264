@@ -89,7 +89,7 @@ long int rofind(FILE * fp, int id){
 
 busnode * tree_insert(busnode * treenode, busnode * root){
   if(root == NULL){
-    return node;
+    return treenode;
   }
 // if(node == NULL){
 // return root;
