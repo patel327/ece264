@@ -7,6 +7,7 @@ typedef struct locnode_tr{
   struct locnode_tr * next;
   long int bOffset;
   long int rOffset;
+  int id;
 }locnode;
 
 typedef struct busnode_tr {
@@ -28,13 +29,23 @@ const char* reviews_path){
   FILE * rptr;
   char  line[2000];
   long int busoff;
+  char ** busarr;
+  busnode * treenode;
   
   YelpDataBST * busbst = malloc(sizeof(YelpDataBST));
   bptr = fopen(businesses_path, "r");
   rptr = fopen(reviews_path, "r");
+  busoff = ftell(bptr);
   while(fgets(line, 2000,bptr) != NULL){
+    busarr = explode(line, "\t");
+    treenode = malloc(sizeof(busnode));
+    treenode -> name = busarr[1];
+    tree_insert(treenode ,busbst -> root);
+    locnode * locations = malloc(sizeof(locnode));
+    locations -> bOffset = busoff;
+    locations -> id = busarr[0]
+    locations -> rOffset = 
     busoff = ftell(bptr);
-    
   }
   
   
@@ -53,6 +64,22 @@ void destroy_business_result(struct Business* b){
   
 }
 
+tree_insert(busnode * treenode, busnode * root){
+  if(root == NULL){
+    return node;
+  }
+// if(node == NULL){
+// return root;
+// }
+  if(strcmp(node -> name, root -> name) < 0){
+    root -> left = tree_insert(node, root -> left);
+    return root;
+  }
+  if(strcmp(node -> name, root -> name) > 0){
+    root -> right = tree_insert(node, root -> right);
+    return root;
+  }
+}
 
 char ** explode(const char * str, const char * delims/*, int * arrLen*/)
 {
