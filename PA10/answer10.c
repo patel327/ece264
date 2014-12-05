@@ -3,9 +3,6 @@
 #include <stdlib.h>
 #include "answer10.h"
 
-busnode * tree_insert(busnode * treenode, busnode * root);
-char ** explode(const char * str, const char * delims/*, int * arrLen*/);
-long int rofind(FILE * fp, int id);
 
 typedef struct locnode_tr{
   struct locnode_tr * next;
@@ -26,6 +23,10 @@ typedef struct YelpDataBST {
   FILE * revptr;
   busnode * root;
 } YelpDataBST;
+
+busnode * tree_insert(busnode * treenode, busnode * root);
+char ** explode(const char * str, const char * delims/*, int * arrLen*/);
+long int rofind(FILE * fp, int id);
 
 struct YelpDataBST* create_business_bst(const char* businesses_path,
 const char* reviews_path){
