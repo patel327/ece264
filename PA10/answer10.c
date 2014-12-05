@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include "answer10.h"
 
+tree_insert(busnode * treenode, busnode * root);
+char ** explode(const char * str, const char * delims/*, int * arrLen*/);
+rofind(FILE * fp, int id);
+
 typedef struct locnode_tr{
   struct locnode_tr * next;
   long int bOffset;
@@ -73,7 +77,7 @@ rofind(FILE * fp, int id){
   while(fgets(line, 2000, fp)!= NULL){
     revarr = explode(line, "\t");
     if(atoi(revarr[0]) > id){
-      fseek(fp, pos, SEEK_SET)
+      fseek(fp, pos, SEEK_SET);
       return -1;
     }
     pos = ftell(fp);
