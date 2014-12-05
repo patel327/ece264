@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "answer10.h"
 
-tree_insert(busnode * treenode, busnode * root);
+busnode * tree_insert(busnode * treenode, busnode * root);
 char ** explode(const char * str, const char * delims/*, int * arrLen*/);
 long int rofind(FILE * fp, int id);
 
@@ -86,7 +86,7 @@ long int rofind(FILE * fp, int id){
   return pos;
 }
 
-tree_insert(busnode * treenode, busnode * root){
+busnode *tree_insert(busnode * treenode, busnode * root){
   if(root == NULL){
     return node;
   }
