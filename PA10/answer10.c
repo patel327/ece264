@@ -51,7 +51,14 @@ const char* reviews_path){
     locations -> id = atoi(busarr[0]);
     locations -> rOffset = rofind(rptr, locations -> id);
     busoff = ftell(bptr);
-    free();
+    free(busarr[0]);
+    free(busarr[1]);
+    free(busarr[2]);
+    free(busarr[3]);
+    free(busarr[4]);
+    free(busarr[5]);
+    free(busarr[6]);
+    free(busarr);
   }
   
   
@@ -82,7 +89,13 @@ long int rofind(FILE * fp, int id){
       return -1;
     }
     pos = ftell(fp);
-    free();
+    free(revarr[0]);
+    free(revarr[1]);
+    free(revarr[2]);
+    free(revarr[3]);
+    free(revarr[4]);
+    free(revarr[5]);
+    free(revarr);
   }
   return pos;
 }
