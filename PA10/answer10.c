@@ -86,7 +86,7 @@ long int rofind(FILE * fp, int id){
   return pos;
 }
 
-busnode *tree_insert(busnode * treenode, busnode * root){
+busnode * tree_insert(busnode * treenode, busnode * root){
   if(root == NULL){
     return node;
   }
