@@ -40,8 +40,8 @@ const char* reviews_path){
   YelpDataBST * busbst = malloc(sizeof(YelpDataBST));
   bptr = fopen(businesses_path, "r");
   rptr = fopen(reviews_path, "r");
-  busbst -> busptr = bptr
-  busbst -> revptr = rptr
+  busbst -> busptr = bptr;
+  busbst -> revptr = rptr;
   busoff = ftell(bptr);
   while(fgets(line, 2000,bptr) != NULL){
     busarr = explode(line, "\t");
