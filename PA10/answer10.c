@@ -88,7 +88,7 @@ long int rofind(FILE * fp, int id){
 
   while(fgets(line, 2000, fp)!= NULL){
     revarr = explode(line, "\t");
-    if(atoi(revarr[0] == id)){
+    if(atoi(revarr[0]) == id){
       return pos;
     }
     if(atoi(revarr[0]) > id){
