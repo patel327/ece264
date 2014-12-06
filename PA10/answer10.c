@@ -104,6 +104,7 @@ long int rofind(FILE * fp, int id){
     free(revarr[5]);
     free(revarr);
   }
+  return -1;
 }
 
 busnode * tree_insert(busnode * treenode, busnode * root){
