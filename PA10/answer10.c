@@ -88,6 +88,9 @@ long int rofind(FILE * fp, int id){
 
   while(fgets(line, 2000, fp)!= NULL){
     revarr = explode(line, "\t");
+    if(atoi(revarr[0] == id)){
+      return pos;
+    }
     if(atoi(revarr[0]) > id){
       fseek(fp, pos, SEEK_SET);
       return -1;
@@ -101,7 +104,6 @@ long int rofind(FILE * fp, int id){
     free(revarr[5]);
     free(revarr);
   }
-  return pos;
 }
 
 busnode * tree_insert(busnode * treenode, busnode * root){
