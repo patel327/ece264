@@ -62,14 +62,19 @@ const char* reviews_path){
     free(busarr[6]);
     free(busarr);
   }
-  fclose(busbst -> revptr);
-  fclose(busbst -> busptr);
+  //fclose(busbst -> revptr);
+  //fclose(busbst -> busptr);
   return busbst;
   
 }
 
 struct Business* get_business_reviews(struct YelpDataBST* bst,
 char* name, char* state, char* zip_code){
+  Business * busob = malloc(sizeof(Business));
+  busob -> name = name;
+  locnode * node = tree_search_name(name, bst -> root);
+  bussort(busob, state, zip_code, node, bst);
+  
   
 }
 
@@ -79,6 +84,38 @@ void destroy_business_bst(struct YelpDataBST* bst){
 
 void destroy_business_result(struct Business* b){
   
+}
+
+void bussort(Business * object, char* state, char* zip_code, locnode * node, YelpDataBST* bst){
+  object -> num_locations = 0;
+  
+  fseek(bst -> busptr, node -> bOffset, SEEK_SET);
+  char mystring[2000] = NULL;  
+  fgets(mystring, 2000, bst -> busptr);
+  char** busarr = explode(mystring, "\t");
+  object -> locations[num_locations] -> address = busarr[2];
+  object -> locations[num_locations] -> city = busarr[3];
+  object -> locations[num_locations] -> state = busarr[4];
+  object -> locations[num_locations] -> zip_code = busarr[5];
+  
+  
+}
+
+locnode * tree_search_name(char * name, busnode * root){
+  if(root == NULL){
+    return NULL;
+  }
+  if((strcasecmp(name, root -> name)) == 0){
+    return root -> head;
+  }
+  if((strcasecmp(name, root -> name)) > 0){
+    root = tree_search_name(name, root -> right);
+    return root -> head;
+  }
+  //if((strcasecmp(name, root -> left)) < 0){
+    root = tree_search_name(name, root -> left);
+    return root -> head;
+  //}
 }
 
 long int rofind(FILE * fp, int id){
