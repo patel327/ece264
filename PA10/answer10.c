@@ -27,6 +27,9 @@ typedef struct YelpDataBST {
 busnode * tree_insert(busnode * treenode, busnode * root);
 char ** explode(const char * str, const char * delims/*, int * arrLen*/);
 long int rofind(FILE * fp, int id);
+void bussort(Business * object, char* state, char* zip_code, locnode * node, YelpDataBST* bst);
+int getrevnum(YelpDataBst * bst, locnode * node);
+locnode * tree_search_name(char * name, busnode * root);
 
 struct YelpDataBST* create_business_bst(const char* businesses_path,
 const char* reviews_path){
