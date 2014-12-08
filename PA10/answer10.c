@@ -27,8 +27,8 @@ typedef struct YelpDataBST {
 busnode * tree_insert(busnode * treenode, busnode * root);
 char ** explode(const char * str, const char * delims/*, int * arrLen*/);
 long int rofind(FILE * fp, int id);
-void bussort(Business * object, char* state, char* zip_code, locnode * node, YelpDataBST* bst);
-int getrevnum(YelpDataBst * bst, locnode * node);
+void bussort(struct Business * object, char* state, char* zip_code, struct locnode * node, struct YelpDataBST* bst);
+int getrevnum(struct YelpDataBst * bst, struct locnode * node);
 locnode * tree_search_name(char * name, busnode * root);
 
 struct YelpDataBST* create_business_bst(const char* businesses_path,
@@ -73,7 +73,7 @@ const char* reviews_path){
 
 struct Business* get_business_reviews(struct YelpDataBST* bst,
 char* name, char* state, char* zip_code){
-  Business * busob = malloc(sizeof(Business));
+  struct Business * busob = malloc(sizeof(Business));
   busob -> name = name;
   locnode * node = tree_search_name(name, bst -> root);
   bussort(busob, state, zip_code, node, bst);
@@ -89,7 +89,7 @@ void destroy_business_result(struct Business* b){
   
 }
 
-void bussort(Business * object, char* state, char* zip_code, locnode * node, YelpDataBST* bst){
+void bussort(struct Business * object, char* state, char* zip_code,struct locnode * node,struct YelpDataBST* bst){
   object -> num_locations = 0;
   locnode* curr = node;
   while(curr -> next != NULL){
@@ -141,7 +141,7 @@ void bussort(Business * object, char* state, char* zip_code, locnode * node, Yel
   }
 }
 
-int getrevnum(YelpDataBst * bst, locnode * node){
+int getrevnum(struct YelpDataBst * bst,struct locnode * node){
   int num = 0;
   fseek(bst -> revptr, node -> rOffset, SEEK_SET)
   while(1){
