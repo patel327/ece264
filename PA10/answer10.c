@@ -73,7 +73,7 @@ const char* reviews_path){
 
 struct Business* get_business_reviews(struct YelpDataBST* bst,
 char* name, char* state, char* zip_code){
-  (struct Business)* busob = malloc(sizeof(Business));
+  struct Business* busob = malloc(sizeof(struct Business));
   busob -> name = name;
   locnode * node = tree_search_name(name, bst -> root);
   buscreate(busob, state, zip_code, node, bst);
