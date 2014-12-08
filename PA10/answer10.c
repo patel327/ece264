@@ -92,13 +92,16 @@ void destroy_business_result(struct Business* b){
 void buscreate(struct Business * object, char * state, char * zip_code, locnode * node, YelpDataBST * bst){
   object -> num_locations = 0;
   locnode* curr = node;
+  int i;
+  int j;
+  
   while(curr -> next != NULL){
     curr = curr -> next;
     object -> num_locations += 1;
   }
   fseek(bst -> busptr, node -> bOffset, SEEK_SET);
   object -> locations = malloc(sizeof(Location));
-  for(int i = 0; i < (object -> num_locations); i++){
+  for(i = 0; i < (object -> num_locations); i++){
   
   char mystring[2000] = "";  
   fgets(mystring, 2000, bst -> busptr);
@@ -120,15 +123,15 @@ void buscreate(struct Business * object, char * state, char * zip_code, locnode 
   free(busarr[6]);
   free(busarr);
   object -> num_reviews = getrevnum(bst, node);
-  object -> location -> reviews = malloc(sizeof(Review));
+  object -> locations[i] -> reviews = malloc(sizeof(Review));
   fseek(bst -> revptr, node -> rOffset, SEEK_SET);
   for(j=0; j < (object -> num_reviews); j++){
     char mystring2[20000] = "";
     fgets(mystring2, 20000, bus ->revptr);
-    char** revarr = explode(mystring2, "\t")
-    object -> locations -> reviews[j] -> text = malloc(sizeof(char));
-    object -> locations -> reviews[j] -> stars = atoi(revarr[1]);
-    object -> locations -> reviews[j] -> text = revarr[5];
+    char** revarr = explode(mystring2, "\t");
+    object -> locations[i] -> reviews[j] -> text = malloc(sizeof(char));
+    object -> locations[i] -> reviews[j] -> stars = atoi(revarr[1]);
+    object -> locations[i] -> reviews[j] -> text = revarr[5];
     free(revarr[0]);
     free(revarr[1]);
     free(revarr[2]);
