@@ -147,7 +147,7 @@ int getrevnum( YelpDataBST * bst, locnode * node){
   while(1){
     char ** revarr;
     char mystring[20000];
-    fgets(mystring, 20000, bus-> revptr);
+    fgets(mystring, 20000, bst-> revptr);
     revarr = explode(mystring, "\t");
     if(bst -> root -> head -> id == atoi(revarr[0])){
       num++;
@@ -181,11 +181,11 @@ locnode * tree_search_name(char * name, busnode * root){
     return root -> head;
   }
   if((strcasecmp(name, root -> name)) > 0){
-    root = tree_search_name(name, root -> right);
+    root -> head = tree_search_name(name, root -> right);
     return root -> head;
   }
   //if((strcasecmp(name, root -> left)) < 0){
-    root = tree_search_name(name, root -> left);
+    root -> head = tree_search_name(name, root -> left);
     return root -> head;
   //}
 }
