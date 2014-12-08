@@ -100,7 +100,7 @@ void buscreate(struct Business * object, char * state, char * zip_code, locnode 
     object -> num_locations += 1;
   }
   fseek(bst -> busptr, node -> bOffset, SEEK_SET);
-  object -> locations = malloc(sizeof(Location));
+  object -> locations = malloc(sizeof(struct Location));
   for(i = 0; i < (object -> num_locations); i++){
   
   char mystring[2000] = "";  
