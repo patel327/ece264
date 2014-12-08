@@ -88,17 +88,36 @@ void destroy_business_result(struct Business* b){
 
 void bussort(Business * object, char* state, char* zip_code, locnode * node, YelpDataBST* bst){
   object -> num_locations = 0;
-  
+  locnode* curr = node;
+  while(curr -> next != NULL){
+    curr = curr -> next;
+    object -> num_locations += 1;
+  }
   fseek(bst -> busptr, node -> bOffset, SEEK_SET);
+  object -> locations = malloc(sizeof(Location));
+  for(int i = 0; i < (object -> num_locations); i++){
+  
   char mystring[2000] = NULL;  
   fgets(mystring, 2000, bst -> busptr);
   char** busarr = explode(mystring, "\t");
-  object -> locations[num_locations] -> address = busarr[2];
-  object -> locations[num_locations] -> city = busarr[3];
-  object -> locations[num_locations] -> state = busarr[4];
-  object -> locations[num_locations] -> zip_code = busarr[5];
+  locations[i] -> address = malloc(sizeof(char));
+  locations[i] -> city = malloc(sizeof(char));
+  locations[i] -> state = malloc(sizeof(char));
+  locations[i] -> zip_code = malloc(sizeof(char));
+  locations[i] -> address = busarr[2];
+  locations[i] -> city = busarr[3];
+  locations[i] -> state = busarr[4];
+  locations[i] -> zip_code = busarr[5];
+  free(busarr[0]);
+  free(busarr[1]);
+  free(busarr[2]);
+  free(busarr[3]);
+  free(busarr[4]);
+  free(busarr[5]);
+  free(busarr[6]);
+  free(busarr);
   
-  
+  }
 }
 
 locnode * tree_search_name(char * name, busnode * root){
@@ -126,20 +145,28 @@ long int rofind(FILE * fp, int id){
   while(fgets(line, 2000, fp)!= NULL){
     revarr = explode(line, "\t");
     if(atoi(revarr[0]) == id){
+      free(revarr[0]);
+      free(revarr[1]);
+      free(revarr[2]);
+      free(revarr[3]);
+      free(revarr[4]);
+      free(revarr[5]);
+      free(revarr);      
       return pos;
     }
     if(atoi(revarr[0]) > id){
       fseek(fp, pos, SEEK_SET);
+      free(revarr[0]);
+      free(revarr[1]);
+      free(revarr[2]);
+      free(revarr[3]);
+      free(revarr[4]);
+      free(revarr[5]);
+      free(revarr);
       return -1;
     }
     pos = ftell(fp);
-    free(revarr[0]);
-    free(revarr[1]);
-    free(revarr[2]);
-    free(revarr[3]);
-    free(revarr[4]);
-    free(revarr[5]);
-    free(revarr);
+
   }
   return -1;
 }
