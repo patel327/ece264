@@ -97,17 +97,17 @@ void bussort(Business * object, char* state, char* zip_code, locnode * node, Yel
   object -> locations = malloc(sizeof(Location));
   for(int i = 0; i < (object -> num_locations); i++){
   
-  char mystring[2000] = NULL;  
+  char mystring[2000] = "";  
   fgets(mystring, 2000, bst -> busptr);
   char** busarr = explode(mystring, "\t");
-  locations[i] -> address = malloc(sizeof(char));
-  locations[i] -> city = malloc(sizeof(char));
-  locations[i] -> state = malloc(sizeof(char));
-  locations[i] -> zip_code = malloc(sizeof(char));
-  locations[i] -> address = busarr[2];
-  locations[i] -> city = busarr[3];
-  locations[i] -> state = busarr[4];
-  locations[i] -> zip_code = busarr[5];
+  object -> locations[i] -> address = malloc(sizeof(char));
+  object -> locations[i] -> city = malloc(sizeof(char));
+  object -> locations[i] -> state = malloc(sizeof(char));
+  object -> locations[i] -> zip_code = malloc(sizeof(char));
+  object -> locations[i] -> address = busarr[2];
+  object -> locations[i] -> city = busarr[3];
+  object -> locations[i] -> state = busarr[4];
+  object -> locations[i] -> zip_code = busarr[5];
   free(busarr[0]);
   free(busarr[1]);
   free(busarr[2]);
@@ -116,8 +116,58 @@ void bussort(Business * object, char* state, char* zip_code, locnode * node, Yel
   free(busarr[5]);
   free(busarr[6]);
   free(busarr);
+  object -> num_reviews = getrevnum(bst, node);
+  object -> location -> reviews = malloc(sizeof(Review));
+  fseek(bst -> revptr, node -> rOffset, SEEK_SET);
+  for(j=0; j < (object -> num_reviews); j++){
+    char mystring2[20000] = "";
+    fgets(mystring2, 20000, bus ->revptr);
+    char** revarr = explode(mystring2, "\t")
+    object -> locations -> reviews[j] -> text = malloc(sizeof(char));
+    object -> locations -> reviews[j] -> stars = atoi(revarr[1]);
+    object -> locations -> reviews[j] -> text = revarr[5];
+    free(revarr[0]);
+    free(revarr[1]);
+    free(revarr[2]);
+    free(revarr[3]);
+    free(revarr[4]);
+    free(revarr[5]);
+    free(revarr); 
+  }
   
   }
+}
+
+int getrevnum(YelpDataBst * bst, locnode * node){
+  int num = 0;
+  fseek(bst -> revptr, node -> rOffset, SEEK_SET)
+  while(1){
+    char ** revarr;
+    char mystring[20000];
+    fgets(mystring, 20000, bus-> revptr);
+    revarr = explode(mystring, "\t");
+    if(bst -> root -> head -> id == atoi(revarr[0])){
+      num++;
+    }
+    if(bst -> root -> head -> id != atoi(revarr[0])){
+      free(revarr[0]);
+      free(revarr[1]);
+      free(revarr[2]);
+      free(revarr[3]);
+      free(revarr[4]);
+      free(revarr[5]);
+      free(revarr); 
+      return num;
+    }    
+    free(revarr[0]);
+    free(revarr[1]);
+    free(revarr[2]);
+    free(revarr[3]);
+    free(revarr[4]);
+    free(revarr[5]);
+    free(revarr);    
+  }
+  return 0;
 }
 
 locnode * tree_search_name(char * name, busnode * root){
@@ -138,11 +188,11 @@ locnode * tree_search_name(char * name, busnode * root){
 }
 
 long int rofind(FILE * fp, int id){
-  char line[2000];
+  char line[20000];
   char ** revarr;
   long int pos = ftell(fp);
 
-  while(fgets(line, 2000, fp)!= NULL){
+  while(fgets(line, 20000, fp)!= NULL){
     revarr = explode(line, "\t");
     if(atoi(revarr[0]) == id){
       free(revarr[0]);
