@@ -123,11 +123,11 @@ void buscreate(struct Business * object, char * state, char * zip_code, locnode 
   free(busarr[6]);
   free(busarr);
   object ->locations[i] -> num_reviews = getrevnum(bst, node);
-  object -> locations[i] -> reviews = malloc(sizeof(Review));
+  object -> locations[i] -> reviews = malloc(sizeof(struct Review));
   fseek(bst -> revptr, node -> rOffset, SEEK_SET);
   for(j=0; j < (object -> locations[i] -> num_reviews); j++){
     char mystring2[20000] = "";
-    fgets(mystring2, 20000, bus ->revptr);
+    fgets(mystring2, 20000, bst ->revptr);
     char** revarr = explode(mystring2, "\t");
     object -> locations[i] -> reviews[j] -> text = malloc(sizeof(char));
     object -> locations[i] -> reviews[j] -> stars = atoi(revarr[1]);
