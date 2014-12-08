@@ -27,7 +27,7 @@ typedef struct YelpDataBST {
 busnode * tree_insert(busnode * treenode, busnode * root);
 char ** explode(const char * str, const char * delims/*, int * arrLen*/);
 long int rofind(FILE * fp, int id);
-void bussort(Business * object, char * state, char * zip_code, locnode * node, YelpDataBST * bst);
+void buscreate(Business * object, char * state, char * zip_code, locnode * node, YelpDataBST * bst);
 int getrevnum( YelpDataBST * bst, locnode * node);
 locnode * tree_search_name(char * name, busnode * root);
 
@@ -76,7 +76,7 @@ char* name, char* state, char* zip_code){
   struct Business* busob = malloc(sizeof(Business));
   busob -> name = name;
   locnode * node = tree_search_name(name, bst -> root);
-  bussort(busob, state, zip_code, node, bst);
+  buscreate(busob, state, zip_code, node, bst);
   
   
 }
@@ -89,7 +89,7 @@ void destroy_business_result(struct Business* b){
   
 }
 
-void bussort(Business * object, char * state, char * zip_code, locnode * node, YelpDataBST * bst){
+void buscreate(Business * object, char * state, char * zip_code, locnode * node, YelpDataBST * bst){
   object -> num_locations = 0;
   locnode* curr = node;
   while(curr -> next != NULL){
