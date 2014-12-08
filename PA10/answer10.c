@@ -122,10 +122,10 @@ void buscreate(struct Business * object, char * state, char * zip_code, locnode 
   free(busarr[5]);
   free(busarr[6]);
   free(busarr);
-  object -> num_reviews = getrevnum(bst, node);
+  object ->locations[i] -> num_reviews = getrevnum(bst, node);
   object -> locations[i] -> reviews = malloc(sizeof(Review));
   fseek(bst -> revptr, node -> rOffset, SEEK_SET);
-  for(j=0; j < (object -> num_reviews); j++){
+  for(j=0; j < (object -> locations[i] -> num_reviews); j++){
     char mystring2[20000] = "";
     fgets(mystring2, 20000, bus ->revptr);
     char** revarr = explode(mystring2, "\t");
