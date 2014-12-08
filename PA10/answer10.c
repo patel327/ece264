@@ -73,7 +73,7 @@ const char* reviews_path){
 
 struct Business* get_business_reviews(struct YelpDataBST* bst,
 char* name, char* state, char* zip_code){
-  struct Business * busob = malloc(sizeof(Business));
+  Business * busob = malloc(sizeof(Business));
   busob -> name = name;
   locnode * node = tree_search_name(name, bst -> root);
   bussort(busob, state, zip_code, node, bst);
@@ -143,7 +143,7 @@ void bussort( Business * object, char * state, char * zip_code, locnode * node, 
 
 int getrevnum( YelpDataBST * bst, locnode * node){
   int num = 0;
-  fseek(bst -> revptr, node -> rOffset, SEEK_SET)
+  fseek(bst -> revptr, node -> rOffset, SEEK_SET);
   while(1){
     char ** revarr;
     char mystring[20000];
