@@ -43,7 +43,6 @@ char * u128ToString(uint128 value){
     ind++;
   }
   return ret;
-  }
 }
 
 int primalityTestParallel(uint128 value, int n_threads){
