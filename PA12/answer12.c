@@ -30,6 +30,8 @@ uint128 alphaTou128(const char * str){
 char * u128ToString(uint128 value){
   char* ret = malloc(sizeof(char));
   int ind = 0;
+  char realret;
+  ret = &realret;
   uint128 test = value;
   int counter = 0;
   
