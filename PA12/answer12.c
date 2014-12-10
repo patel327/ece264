@@ -34,7 +34,7 @@ char * u128ToString(uint128 value){
   int ind = 0;
   uint128 test = value;
   int counter = 0;
-  ret = &ret2;
+  
   while(test != 0){
     test = test/10;
     counter++;
@@ -44,6 +44,7 @@ char * u128ToString(uint128 value){
     value = value/10;
     ind++;
   }
+  ret = ret2;
   return ret;
 }
 
