@@ -40,12 +40,12 @@ char * u128ToString(uint128 value){
     counter++;
   }
   for(ind = 0; ind < counter; ind++){
-    ret2[counter-ind] = (value % 10)+ (int)'0';
+    ret2[counter-ind] = char((value % 10)+ (int)'0');
     value = value/10;
     ind++;
   }
   ret = ret2;
-  return ret2;
+  return ret;
 }
 
 int primalityTestParallel(uint128 value, int n_threads){
