@@ -40,10 +40,11 @@ char * u128ToString(uint128 value){
     counter++;
   }
   for(ind = 0; ind < counter; ind++){
-    ret2[counter-ind] = (value % 10)+ (int)'0';
+    ret2[counter-(ind+1)] = (value % 10)+ (int)'0';
     value = value/10;
     
   }
+  ret2[counter] = '\0';
   ret = ret2;
   return ret;
 }
