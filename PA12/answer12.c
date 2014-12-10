@@ -38,7 +38,7 @@ char * u128ToString(uint128 value){
     counter++;
   }
   while(value != 0){
-    ret[counter-ind] = value % 10;
+    ret[counter-ind] = char((value % 10)+  (int)'0');
     value = value/10;
     ind++;
   }
