@@ -39,7 +39,7 @@ char * u128ToString(uint128 value){
     test = test/10;
     counter++;
   }
-  for(ind = 0; ind < counter; ind++){
+  for(ind = 0; ind < (counter - 1); ind++){
     ret[counter-(ind+1)] = (value % 10)+ (int)'0';
     value = value/10;
     
