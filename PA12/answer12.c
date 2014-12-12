@@ -11,6 +11,8 @@ typedef struct thread_s{
   uint128 prime;
 }thread;
 
+void * is_prime(void * params);
+
 uint128 alphaTou128(const char * str){
   uint128 ret = 0;
   int ind = 0;
