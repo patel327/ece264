@@ -42,7 +42,7 @@ char * u128ToString(uint128 value){
   
   char* ret = malloc((counter+1)*sizeof(char));
   
-  for(ind = 0; ind < (counter-1); ind++){
+  for(ind = 0; ind < (counter); ind++){
     ret[counter-(ind+1)] = (value % 10)+ (int)'0';
     value = value/10;
     
