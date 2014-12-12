@@ -39,12 +39,12 @@ char * u128ToString(uint128 value){
     test = test/10;
     counter++;
   }
-  for(ind = 0; ind < (counter - 1); ind++){
-    ret[counter-(ind+1)] = (value % 10)+ '0';
+  for(ind = 0; ind < (counter); ind++){
+    ret[counter-(ind+1)] = (value % 10)+ (int)'0';
     value = value/10;
     
   }
-  ret[counter] = '\0';
+  ret[ind] = '\0';
   //ret = ret2;
   return ret;
 }
