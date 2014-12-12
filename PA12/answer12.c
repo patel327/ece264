@@ -84,16 +84,17 @@ int primalityTestParallel(uint128 value, int n_threads){
   	pthread_join(arrThr[count], NULL);
   }
   count = 0;
+  int answer;
   while(count != n_threads){
     if(ranges[count].prime == 0){
-  	return 0;
+  	answer = 0;
     }
     else{
-  	return 1;
+  	answer = 1;
     }
     count++;
   }  
-  
+  return answer;
 //  if(value % 2 == 0){
 //    if(value == 2){
 //      return 1;
