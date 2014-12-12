@@ -66,17 +66,29 @@ int primalityTestParallel(uint128 value, int n_threads){
   thread * ranges = malloc(sizeof(thread) * n_threads);
   int count;
   for(count = 0; count < n_threads; n_threads++){
-    ranges[count].value = value;
+  	ranges[count].value = value;
     if(count == 0){
-    ranges[count].lower = 3;
+    	ranges[count].lower = 3;
+  }
+    else{
+    	ranges[count].lower = count * size;
+  }
+  	ranges[count].higher = (count+1) * size; 
+  	pthread_create(&arrThr[count],NULL, is_prime, ranges[count]);
+  }  
+  for(count = 0; count < n_threads; n_threads++){
+  	pthread_join(arrThr[count], NULL);
+  }
+  count = 0;
+  while(count != n_threads){
+    if(ranges[count].prime == 0){
+  	return 0;
     }
     else{
-      ranges[count].lower = count * size;
+  	return 1;
     }
-    ranges[count].higher = (count+1) * size; 
-    pthread_create(arrThr[count],NULL, is_prime, ranges[count])
+    count++;
   }  
-    
   
 //  if(value % 2 == 0){
 //    if(value == 2){
