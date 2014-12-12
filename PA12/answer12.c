@@ -111,8 +111,8 @@ int primalityTestParallel(uint128 value, int n_threads){
 }
 
 void * is_prime(void * params){
-  params = (thread *) params;
-  if((params.value) % 2 == 0){
+  thread * params = (thread *) params;
+  if((params -> value) % 2 == 0){
     if(params -> value == 2){
       params -> prime = 1;
       return NULL;
