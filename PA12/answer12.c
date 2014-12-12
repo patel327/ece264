@@ -111,24 +111,24 @@ int primalityTestParallel(uint128 value, int n_threads){
 }
 
 void * is_prime(void * params){
-  thread * params = (thread *) params;
-  if((params -> value) % 2 == 0){
-    if(params -> value == 2){
-      params -> prime = 1;
+  thread * paramsob = (thread *) params;
+  if((paramsob -> value) % 2 == 0){
+    if(paramsob -> value == 2){
+      paramsob -> prime = 1;
       return NULL;
     }
     else{
-      params -> prime = 0;
+      paramsob -> prime = 0;
       return NULL;
     }
   }
   //long int max = floor(sqrt(value));
   long int i;
-  for(i = params -> lower; i <= (params -> upper); i += 2){
-    if (params -> value % ((2 * i) + 1) == 0) 
-	  params -> prime = 0;
+  for(i = paramsob -> lower; i <= (paramsob -> higher); i += 2){
+    if (paramsob -> value % ((2 * i) + 1) == 0) 
+	  paramsob -> prime = 0;
 	  return NULL;
   }
-  params -> prime = 1;
+  paramsob -> prime = 1;
   return NULL;
 }
