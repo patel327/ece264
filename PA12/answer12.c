@@ -20,6 +20,7 @@ uint128 alphaTou128(const char * str){
   if(str[ind] == '-')
   {
     minus = 1;
+    return 0;
   }
   while(str[ind] != '\0')
   {
@@ -117,17 +118,17 @@ void * is_prime(void * params){
       return NULL;
     }
     else{
-      params -> prime = 0
+      params -> prime = 0;
       return NULL;
     }
   }
   //long int max = floor(sqrt(value));
   long int i;
-  for(i = params -> lower; i <= (params -> upper); ind += 2){
+  for(i = params -> lower; i <= (params -> upper); i += 2){
     if (params -> value % ((2 * i) + 1) == 0) 
-	  params -> prime = 0
+	  params -> prime = 0;
 	  return NULL;
   }
-  params -> prime = 1
+  params -> prime = 1;
   return NULL;
 }
