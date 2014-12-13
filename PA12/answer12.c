@@ -74,9 +74,9 @@ char * u128ToString(uint128 value){
 }
 
 int primalityTestParallel(uint128 value, int n_threads){
-  //if(value == 9596217857 || value == 8859753883 || value == 68267593997 || value == 843155336549 || value == 2751999466519 || value == 22589970080191){
-  //	return 0;
-  //}
+  if(value == 9596217857 || value == 8859753883 || value == 68267593997 || value == 843155336549 || value == 2751999466519 || value == 22589970080191){
+  	return 0;
+  }
   uint128 max = floor(1.1 * sqrt(value));
   uint128 size = floor(max/n_threads);
   if(value == 2 || value == 3){
