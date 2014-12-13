@@ -147,7 +147,7 @@ void * is_prime(void * params){
   //}
   //long int max = floor(sqrt(value));
   long int i;
-  for(i = paramsob -> lower; i <= paramsob -> higher; i += 2){
+  for(i = paramsob -> lower; i <= paramsob -> higher; i++){
     if (paramsob -> value % i == 0) 
 	  paramsob -> prime = 0;
 	  return NULL;
