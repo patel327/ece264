@@ -58,7 +58,8 @@ char * u128ToString(uint128 value){
   char* ret = malloc((counter+1)*sizeof(char));
   
   if(value == 0){
-  ret = "0";
+  ret[0] = '0';
+  ret[1] = '\0';
   return ret;
   }
   for(ind = 0; ind < (counter); ind++){
@@ -102,6 +103,8 @@ int primalityTestParallel(uint128 value, int n_threads){
     }
     count++;
   }  
+  free(ranges);
+  free(arrThr);
   return answer;
 //  if(value % 2 == 0){
 //    if(value == 2){
@@ -135,7 +138,7 @@ void * is_prime(void * params){
   //long int max = floor(sqrt(value));
   long int i;
   for(i = paramsob -> lower; i <= (paramsob -> higher); i += 2){
-    if (paramsob -> value % ((2 * i) + 1) == 0) 
+    if (paramsob -> value % i == 0) 
 	  paramsob -> prime = 0;
 	  return NULL;
   }
