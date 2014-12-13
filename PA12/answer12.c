@@ -161,7 +161,7 @@ void * is_prime(void * params){
     //}
   //}
   //long int max = floor(sqrt(value));
-  long int i;
+  uint128 i;
   uint128 high = paramsob -> higher;
   uint128 low = paramsob -> lower;
   for(i = low; i <= high; i++){
