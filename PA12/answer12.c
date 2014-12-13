@@ -150,15 +150,15 @@ int primalityTestParallel(uint128 value, int n_threads){
 
 void * is_prime(void * params){
   mythread * paramsob = (mythread *) params;
-  if((paramsob -> value) % 2 == 0){
+  //if((paramsob -> value) % 2 == 0){
   //  if(paramsob -> value == 2){
   //    paramsob -> prime = 1;
   //    return NULL;
   //  }
     //else{
-     paramsob -> prime = 0;
-      return NULL;
-    }
+     //paramsob -> prime = 0;
+     // return NULL;
+    //}
   //}
   //long int max = floor(sqrt(value));
   long int i;
