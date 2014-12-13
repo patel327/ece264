@@ -171,9 +171,9 @@ void * isprime(void * params){
   uint128 low = paramsob -> lower;
 
   for(i = low; i <= high; i++){
-    if ((value) % i == 0) 
+    if ((value) % i == 0){ 
 	  prime = 0;
-	  return NULL;
+	  return NULL;}
   }
   //paramsob -> prime = 1;
   return NULL;
