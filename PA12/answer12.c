@@ -6,10 +6,10 @@
 #include "answer12.h"
 
 typedef struct thread_s{
-  uint128 low;
-  uint128 high;
+  uint128 lower;
+  uint128 higher;
   uint128 value;
-  uint128 flag;
+  uint128 prime;
 }mythread;
 
 void * isprime(void * holdings);
@@ -72,7 +72,7 @@ char * u128ToString(uint128 value){
   //ret = ret2;
   return ret;
 }
-/*
+
 int primalityTestParallel(uint128 value, int n_threads){
   //if(value == 9596217857 || value == 8859753883 || value == 68267593997 || value == 843155336549 || value == 2751999466519 || value == 22589970080191){
   //	return 0;
@@ -169,13 +169,13 @@ void * is_prime(void * params){
   uint128 low = paramsob -> lower;
   for(i = low; i <= high; i++){
     if ((paramsob -> value) % i == 0) 
-	  paramsob -> prime = 0;
+	  (paramsob -> prime) = 0;
 	  return NULL;
   }
   //paramsob -> prime = 1;
   return NULL;
 }
-*/
+/*
 int primalityTestParallel(uint128 value, int n_threads){
   int primary = 1;
   if(value ==2 || value ==3){
