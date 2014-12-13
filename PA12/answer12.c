@@ -108,7 +108,7 @@ int primalityTestParallel(uint128 value, int n_threads){
   	}}  	
   	
 
-  	pthread_create(&arrThr[count],NULL, is_prime, &ranges[count]);
+  	pthread_create(&arrThr[count],NULL, isprime, &ranges[count]);
   }  
   int answer = 1;
   for(count = 0; count < n_threads; count++){
