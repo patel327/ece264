@@ -105,7 +105,7 @@ int primalityTestParallel(uint128 value, int n_threads){
     if(ranges[count].prime == 0){
   	free(ranges);
   	free(arrThr);
-  	answer = 0;
+  	//answer = 0;
   	return 0;
     }
     else{
