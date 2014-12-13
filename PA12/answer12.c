@@ -74,8 +74,8 @@ char * u128ToString(uint128 value){
 }
 
 int primalityTestParallel(uint128 value, int n_threads){
-  long int max = floor(1.1 * sqrt(value));
-  int size = floor(max/n_threads);
+  uint128 max = floor(1.1 * sqrt(value));
+  uint128 size = floor(max/n_threads);
   if(value == 2 || value == 3){
   	return 1;
   }
