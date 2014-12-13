@@ -83,7 +83,7 @@ int primalityTestParallel(uint128 value, int n_threads){
   	return 1;
   }
   pthread_t * arrThr = malloc(sizeof(pthread_t) * n_threads);
-  mythread * ranges = malloc(sizeof(mythread) * n_threads);
+  mythread * ranges1 = malloc(sizeof(mythread) * n_threads);
   int count;
   for(count = 0; count < n_threads; count++){
   	ranges1[count].prime = 1;
