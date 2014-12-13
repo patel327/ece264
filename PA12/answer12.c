@@ -101,23 +101,27 @@ int primalityTestParallel(uint128 value, int n_threads){
   	}
   	pthread_create(&arrThr[count],NULL, is_prime, &ranges[count]);
   }  
+  int answer = 1;
   for(count = 0; count < n_threads; count++){
   	pthread_join(arrThr[count], NULL);
+  	if(ranges[count].prime == 0){
+  		answer = 0;
+  	}
   }
-  count = 0;
-  int answer;
-  while(count != n_threads){
-    if(ranges[count].prime == 0){
-  	free(ranges);
-  	free(arrThr);
+  //count = 0;
+  //int answer;
+  //while(count != n_threads){
+  //  if(ranges[count].prime == 0){
+  //	free(ranges);
+  //	free(arrThr);
   	//answer = 0;
-  	return 0;
-    }
-    else{
-  	answer = 1;
-    }
-    count++;
-  }  
+  //	return 0;
+   // }
+   // else{
+  //	answer = 1;
+   // }
+   // count++;
+  //}  
   free(ranges);
   free(arrThr);
   return answer;
