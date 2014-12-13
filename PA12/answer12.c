@@ -75,7 +75,7 @@ char * u128ToString(uint128 value){
 
 int primalityTestParallel(uint128 value, int n_threads){
   long int max = floor(1.1 * sqrt(value));
-  int size = max/n_threads;
+  int size = floor(max/n_threads);
   pthread_t * arrThr = malloc(sizeof(pthread_t) * n_threads);
   mythread * ranges = malloc(sizeof(mythread) * n_threads);
   int count;
