@@ -12,7 +12,7 @@ typedef struct thread_s{
   uint128 flag;
 }mythread;
 
-void * is_prime(void * holdings);
+void * isprime(void * holdings);
 
 uint128 alphaTou128(const char * str){
   uint128 ret = 0;
