@@ -99,10 +99,11 @@ int primalityTestParallel(uint128 value, int n_threads){
   	}
   	else{
   	ranges[count].higher =  size +ranges[count -1].higher;
-  	}
   	if(ranges[count].higher % 2 ==0){
   		ranges[count].higher -= 1;
+  	}  	
   	}
+
   	pthread_create(&arrThr[count],NULL, is_prime, &ranges[count]);
   }  
   int answer = 1;
