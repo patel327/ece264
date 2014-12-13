@@ -168,7 +168,7 @@ void * is_prime(void * params){
   uint128 high = paramsob -> higher;
   uint128 low = paramsob -> lower;
   for(i = low; i <= high; i++){
-    if (paramsob -> value % i == 0) 
+    if ((paramsob -> value) % i == 0) 
 	  paramsob -> prime = 0;
 	  return NULL;
   }
