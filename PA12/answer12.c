@@ -12,7 +12,7 @@ typedef struct thread_s{
   uint128 flag;
 }mythread;
 
-void * is_prime(void * params);
+void * is_prime(void * holdings);
 
 uint128 alphaTou128(const char * str){
   uint128 ret = 0;
@@ -202,22 +202,22 @@ int primalityTestParallel(uint128 value, int n_threads){
       holdings[i].high = holdings[i].high + thread_width;
     }  
     else{
-      holdings[i].high = holdings[i-1].high
+      holdings[i].high = holdings[i-1].high;
       if(holding[i].high % 2 == 0){
         holdings[i].high -= 1;
       }
     }
-    pthread_create(&arr_threads[i], NULL, isprime, &holdings[i])
+    pthread_create(&arr_threads[i], NULL, isprime, &holdings[i]);
     }
     for (i=0; i<n_threads; i++){
-      pthread_join(arr_thread[i], NULL);
+      pthread_join(arr_threads[i], NULL);
       if(holdings[i].flag == 0){
         primary = 0;
       }
     }
     free(arr_threads);
     free(holdings);
-    return primacy;
+    return primary;
   }
   
   void * isprime(void * holdings){
