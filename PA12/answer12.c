@@ -86,8 +86,14 @@ int primalityTestParallel(uint128 value, int n_threads){
   }
     else{
     	ranges[count].lower = count * size;
+    	if(ranges[count].lower % 2 ==0){
+    		ranges[count].lower -= 1;
+    	}
   }
-  	ranges[count].higher = (count+1) * size; 
+  	ranges[count].higher = (count+1) * size;
+  	if(ranges[count].lower % 2 ==0){
+  		ranges[count].lower -= 1;
+  	}
   	pthread_create(&arrThr[count],NULL, is_prime, &ranges[count]);
   }  
   for(count = 0; count < n_threads; count++){
