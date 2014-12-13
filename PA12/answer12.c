@@ -12,7 +12,7 @@ typedef struct thread_s{
   uint128 prime;
 }mythread;
 
-void * isprime(void * holdings);
+void * isprime(void * params);
 
 uint128 alphaTou128(const char * str){
   uint128 ret = 0;
@@ -151,7 +151,7 @@ int primalityTestParallel(uint128 value, int n_threads){
 //  return 1;
 }
 
-void * is_prime(void * params){
+void * isprime(void * params){
   mythread * paramsob = (mythread *) params;
   if((paramsob -> value) % 2 == 0){
   //  if(paramsob -> value == 2){
@@ -238,3 +238,4 @@ int primalityTestParallel(uint128 value, int n_threads){
       return NULL;
     
     }
+*/
