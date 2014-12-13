@@ -44,7 +44,7 @@ char * u128ToString(uint128 value){
   
   int ind = 0;
   uint128 test = value;
-  int counter = 0;
+  int counter = 1;
   
   //if(value == 0){
   //return "0";
