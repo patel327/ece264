@@ -10,7 +10,7 @@ typedef struct thread_s{
   uint128 higher;
   uint128 value;
   uint128 prime;
-}thread;
+}mythread;
 
 void * is_prime(void * params);
 
@@ -68,12 +68,12 @@ char * u128ToString(uint128 value){
 }
 
 int primalityTestParallel(uint128 value, int n_threads){
-  long int max = floor(sqrt(value));
+  long int max = floor(1.1 * sqrt(value));
   int size = max/n_threads;
   pthread_t * arrThr = malloc(sizeof(pthread_t) * n_threads);
-  thread * ranges = malloc(sizeof(thread) * n_threads);
+  mythread * ranges = malloc(sizeof(mythread) * n_threads);
   int count;
-  for(count = 0; count < n_threads; n_threads++){
+  for(count = 0; count < n_threads; count++){
   	ranges[count].value = value;
     if(count == 0){
     	ranges[count].lower = 3;
@@ -84,7 +84,7 @@ int primalityTestParallel(uint128 value, int n_threads){
   	ranges[count].higher = (count+1) * size; 
   	pthread_create(&arrThr[count],NULL, is_prime, &ranges[count]);
   }  
-  for(count = 0; count < n_threads; n_threads++){
+  for(count = 0; count < n_threads; count++){
   	pthread_join(arrThr[count], NULL);
   }
   count = 0;
@@ -117,7 +117,7 @@ int primalityTestParallel(uint128 value, int n_threads){
 }
 
 void * is_prime(void * params){
-  thread * paramsob = (thread *) params;
+  mythread * paramsob = (mythread *) params;
   if((paramsob -> value) % 2 == 0){
     if(paramsob -> value == 2){
       paramsob -> prime = 1;
