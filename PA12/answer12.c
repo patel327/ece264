@@ -97,7 +97,7 @@ int primalityTestParallel(uint128 value, int n_threads){
   	ranges[count].higher = ranges[count].lower+size;
   	}
   	else{
-  	ranges[count].higher =  size +ranges[count].lower;
+  	ranges[count].higher =  size +ranges[count -1].higher;
   	}
   	if(ranges[count].higher % 2 ==0){
   		ranges[count].higher -= 1;
