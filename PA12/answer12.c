@@ -234,6 +234,7 @@ int primalityTestParallel(uint128 value, int n_threads){
         testing -> flag = 0;
         return NULL;
       }
-      return NULL;
     }
+      return NULL;
+    
     }
