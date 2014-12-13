@@ -77,8 +77,8 @@ int primalityTestParallel(uint128 value, int n_threads){
   //if(value == 9596217857 || value == 8859753883 || value == 68267593997 || value == 843155336549 || value == 2751999466519 || value == 22589970080191){
   //	return 0;
   //}
-  uint128 max = floor(1.1 * sqrt(value));
-  uint128 size = floor(max/n_threads);
+  uint128 max1 = floor(1.1 * sqrt(value));
+  uint128 size1 = floor(max1/n_threads);
   if(value == 2 || value == 3){
   	return 1;
   }
@@ -86,34 +86,34 @@ int primalityTestParallel(uint128 value, int n_threads){
   mythread * ranges = malloc(sizeof(mythread) * n_threads);
   int count;
   for(count = 0; count < n_threads; count++){
-  	ranges[count].prime = 1;
-  	ranges[count].value = value;
+  	ranges1[count].prime = 1;
+  	ranges1[count].value = value;
     if(count == 0){
-    	ranges[count].lower = 3;
+    	ranges1[count].lower = 3;
     }
     else{
-    	ranges[count].lower = ranges[count - 1].lower + size;
-    	if(ranges[count].lower % 2 ==0){
-    		ranges[count].lower -= 1;
+    	ranges1[count].lower = ranges1[count - 1].lower + size1;
+    	if(ranges1[count].lower % 2 ==0){
+    		ranges1[count].lower -= 1;
     	}
     }
   	if(count == 0){
-  	ranges[count].higher = ranges[count].lower+size;
+  	ranges1[count].higher = ranges1[count].lower+size1;
   	}
   	else{
-  	ranges[count].higher =  size +ranges[count -1].higher;
+  	ranges1[count].higher =  size1 +ranges1[count -1].higher;
   	
-  	if(ranges[count].higher % 2 ==0){
-  		ranges[count].higher -= 1;
+  	if(ranges1[count].higher % 2 ==0){
+  		ranges1[count].higher -= 1;
   	}}  	
   	
 
-  	pthread_create(&arrThr[count],NULL, isprime, &ranges[count]);
+  	pthread_create(&arrThr[count],NULL, isprime, &ranges1[count]);
   }  
   int answer = 1;
   for(count = 0; count < n_threads; count++){
   	pthread_join(arrThr[count], NULL);
-  	if(ranges[count].prime == 0){
+  	if(ranges1[count].prime == 0){
   		answer = 0;
   	}
   }
@@ -131,7 +131,7 @@ int primalityTestParallel(uint128 value, int n_threads){
    // }
    // count++;
   //}  
-  free(ranges);
+  free(ranges1);
   free(arrThr);
   return answer;
 //  if(value % 2 == 0){
@@ -153,13 +153,15 @@ int primalityTestParallel(uint128 value, int n_threads){
 
 void * isprime(void * params){
   mythread * paramsob = (mythread *) params;
-  if((paramsob -> value) % 2 == 0){
+    uint128 prime = paramsob -> prime;
+    uint128 value = paramsob -> value;
+  if(value % 2 == 0){
   //  if(paramsob -> value == 2){
   //    paramsob -> prime = 1;
   //    return NULL;
   //  }
     //else{
-     paramsob -> prime = 0;
+     prime = 0;
       return NULL;
     }
   //}
@@ -167,9 +169,10 @@ void * isprime(void * params){
   uint128 i;
   uint128 high = paramsob -> higher;
   uint128 low = paramsob -> lower;
+
   for(i = low; i <= high; i++){
-    if ((paramsob -> value) % i == 0) 
-	  (paramsob -> prime) = 0;
+    if ((value) % i == 0) 
+	  prime = 0;
 	  return NULL;
   }
   //paramsob -> prime = 1;
