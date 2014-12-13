@@ -83,6 +83,7 @@ int primalityTestParallel(uint128 value, int n_threads){
   mythread * ranges = malloc(sizeof(mythread) * n_threads);
   int count;
   for(count = 0; count < n_threads; count++){
+  	ranges[count].prime = 1;
   	ranges[count].value = value;
     if(count == 0){
     	ranges[count].lower = 3;
