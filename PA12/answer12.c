@@ -6,10 +6,10 @@
 #include "answer12.h"
 
 typedef struct thread_s{
-  uint128 lower;
-  uint128 higher;
+  uint128 low;
+  uint128 high;
   uint128 value;
-  uint128 prime;
+  uint128 flag;
 }mythread;
 
 void * is_prime(void * params);
@@ -72,7 +72,7 @@ char * u128ToString(uint128 value){
   //ret = ret2;
   return ret;
 }
-
+/*
 int primalityTestParallel(uint128 value, int n_threads){
   //if(value == 9596217857 || value == 8859753883 || value == 68267593997 || value == 843155336549 || value == 2751999466519 || value == 22589970080191){
   //	return 0;
@@ -175,3 +175,65 @@ void * is_prime(void * params){
   //paramsob -> prime = 1;
   return NULL;
 }
+*/
+int primalityTestParallel(uint128 value, int n_threads){
+  int primary = 1;
+  if(value ==2 || value ==3){
+    return primary;
+  }
+  pthread_t * arr_threads = malloc(sizeof(pthread_t) * n_threads);
+  mythread * holdings = malloc(sizeof(mythread) * n_threads);
+  uint128 max = floor(1.1 * sqrt(value));
+  uint128 thread_width = floor(max/n_threads);
+  int i;
+  for(i=0; i < n_threads; i++){
+    holdings[i].value = value;
+    holdings[i].flag = 1;
+    if(!i){
+      holdings[i].low = 3;
+    }
+    else{
+      holdings[i].low = thread_width + holdings[i-1].low;
+      if(holdings[i].low % 2 == 0){
+        holdings[i].low -= 1;
+      }
+    }
+    if(!i){
+      holdings[i].high = holdings[i].high + thread_width;
+    }  
+    else{
+      holdings[i].high = holdings[i-1].high
+      if(holding[i].high % 2 == 0){
+        holdings[i].high -= 1;
+      }
+    }
+    pthread_create(&arr_threads[i], NULL, isprime, &holdings[i])
+    }
+    for (i=0; i<n_threads; i++){
+      pthread_join(arr_thread[i], NULL);
+      if(holdings[i].flag == 0){
+        primary = 0;
+      }
+    }
+    free(arr_threads);
+    free(holdings);
+    return primacy;
+  }
+  
+  void * isprime(void * holdings){
+    mythread * testing = (mythread*) holdings;
+    uint128 n = testing -> value;
+    if(n % 2 ==0){
+      testing -> flag = 0;
+      return NULL;}
+    uint128 high = (testing -> high);
+    uint128 low = (testing -> low);
+    uint128 i;
+    for(i = low; i<= high; i++){
+      if(n%i ==0){
+        testing -> flag = 0;
+        return NULL;
+      }
+      return NULL;
+    }
+    }
