@@ -46,6 +46,10 @@ char * u128ToString(uint128 value){
   uint128 test = value;
   int counter = 0;
   
+  if(value == 0){
+  	return 0;
+  }
+  
   while(test != 0){
     test = test/10;
     counter++;
