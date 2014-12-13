@@ -169,6 +169,6 @@ void * is_prime(void * params){
 	  paramsob -> prime = 0;
 	  return NULL;
   }
-  paramsob -> prime = 1;
+  //paramsob -> prime = 1;
   return NULL;
 }
