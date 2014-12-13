@@ -149,10 +149,10 @@ void * is_prime(void * params){
       paramsob -> prime = 1;
       return NULL;
     }
-    else{
-     paramsob -> prime = 0;
-      return NULL;
-    }
+    //else{
+    // paramsob -> prime = 0;
+    //  return NULL;
+    //}
   }
   //long int max = floor(sqrt(value));
   long int i;
