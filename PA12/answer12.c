@@ -199,7 +199,7 @@ int primalityTestParallel(uint128 value, int n_threads){
       }
     }
     if(!i){
-      holdings[i].high = holdings[i].high + thread_width;
+      holdings[i].high = holdings[i].low + thread_width;
     }  
     else{
       holdings[i].high = holdings[i-1].high;
