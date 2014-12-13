@@ -46,9 +46,9 @@ char * u128ToString(uint128 value){
   uint128 test = value;
   int counter = 0;
   
-  if(value == 0){
-  return "0";
-  }
+  //if(value == 0){
+  //return "0";
+  //}
   
   while(test != 0){
     test = test/10;
@@ -57,6 +57,10 @@ char * u128ToString(uint128 value){
   
   char* ret = malloc((counter+1)*sizeof(char));
   
+  if(value == 0){
+  ret = "0";
+  return ret;
+  }
   for(ind = 0; ind < (counter); ind++){
     ret[counter-(ind+1)] = (value % 10)+ (int)'0';
     value = value/10;
